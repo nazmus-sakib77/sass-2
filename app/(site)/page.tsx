@@ -1,0 +1,190 @@
+import Link from "next/link";
+import Reveal from "@/components/Reveal";
+import { site } from "@/lib/content";
+import { getPublishedCaseStudies } from "@/lib/queries";
+
+export const dynamic = "force-dynamic";
+
+export default async function HomePage() {
+  const caseStudies = await getPublishedCaseStudies(3);
+
+  return (
+    <>
+      {/* Hero */}
+      <section className="hero">
+        <div className="container">
+          <Reveal>
+            <p className="eyebrow">Product studio · Next.js full-stack</p>
+          </Reveal>
+          <Reveal delay={0.05}>
+            <h1>
+              We build software that <span className="flame-text">catches fire.</span>
+            </h1>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p className="hero-lead">{site.description}</p>
+          </Reveal>
+          <Reveal delay={0.15}>
+            <div className="hero-cta">
+              <Link href="/get-quote" className="btn btn-primary">
+                Start a project
+              </Link>
+              <Link href="/work" className="btn btn-ghost">
+                See our work
+              </Link>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Stats */}
+      <section className="container" style={{ paddingBottom: 24 }}>
+        <div className="grid grid-3">
+          {site.stats.map((s, i) => (
+            <Reveal key={s.label} delay={i * 0.05}>
+              <div className="stat">
+                <span className="stat-num flame-text">{s.num}</span>
+                <span className="stat-label">{s.label}</span>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* Services */}
+      <section className="section">
+        <div className="container">
+          <div className="grid-head">
+            <div>
+              <p className="eyebrow">What we do</p>
+              <h2 className="section-title">Services built to ship</h2>
+            </div>
+            <Link href="/services" className="btn btn-ghost btn-sm">
+              All services
+            </Link>
+          </div>
+          <div className="grid grid-3">
+            {site.services.map((svc, i) => (
+              <Reveal key={svc.title} delay={i * 0.06}>
+                <div className="card" style={{ height: "100%" }}>
+                  <div style={{ fontSize: "1.8rem", marginBottom: 14 }} className="flame-text">
+                    {svc.icon}
+                  </div>
+                  <h3 style={{ fontSize: "1.3rem", marginBottom: 10 }}>{svc.title}</h3>
+                  <p style={{ color: "var(--text-muted)", marginBottom: 16 }}>{svc.summary}</p>
+                  <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 8 }}>
+                    {svc.points.map((p) => (
+                      <li key={p} style={{ color: "var(--text-dim)", fontSize: "0.9rem" }}>
+                        <span className="flame-text">→ </span>
+                        {p}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Work (DB-driven) */}
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="container">
+          <div className="grid-head">
+            <div>
+              <p className="eyebrow">Selected work</p>
+              <h2 className="section-title">Recent case studies</h2>
+            </div>
+            <Link href="/work" className="btn btn-ghost btn-sm">
+              View all work
+            </Link>
+          </div>
+
+          {caseStudies.length === 0 ? (
+            <div className="card" style={{ textAlign: "center", color: "var(--text-muted)" }}>
+              Case studies are on their way. Check back soon — or{" "}
+              <Link href="/get-quote" className="flame-text">start your own project</Link>.
+            </div>
+          ) : (
+            <div className="grid grid-3">
+              {caseStudies.map((cs, i) => (
+                <Reveal key={cs.id} delay={i * 0.06}>
+                  <Link href={`/work/${cs.slug}`} className="work-card" style={{ height: "100%" }}>
+                    <div
+                      className="work-card-cover"
+                      style={cs.coverImage ? { backgroundImage: `url(${cs.coverImage})` } : undefined}
+                    />
+                    <div className="work-card-body">
+                      <div className="work-card-meta">
+                        {cs.category && <span>{cs.category}</span>}
+                        {cs.client && <span>· {cs.client}</span>}
+                      </div>
+                      <h3>{cs.title}</h3>
+                      <p style={{ color: "var(--text-muted)", fontSize: "0.95rem" }}>{cs.summary}</p>
+                      {cs.result && <div className="work-card-result">{cs.result}</div>}
+                    </div>
+                  </Link>
+                </Reveal>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Process */}
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="container">
+          <div className="grid-head">
+            <div>
+              <p className="eyebrow">How we work</p>
+              <h2 className="section-title">From spark to launch</h2>
+            </div>
+          </div>
+          <div className="grid grid-2">
+            {site.process.map((step, i) => (
+              <Reveal key={step.step} delay={i * 0.05}>
+                <div className="card" style={{ display: "flex", gap: 18 }}>
+                  <span className="mono flame-text" style={{ fontSize: "1.4rem", fontWeight: 700 }}>
+                    {step.step}
+                  </span>
+                  <div>
+                    <h3 style={{ fontSize: "1.2rem", marginBottom: 6 }}>{step.title}</h3>
+                    <p style={{ color: "var(--text-muted)" }}>{step.body}</p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="container">
+          <Reveal>
+            <div
+              className="card"
+              style={{
+                textAlign: "center",
+                padding: "56px 28px",
+                background: "linear-gradient(135deg, rgba(255,77,0,0.08), rgba(255,176,32,0.04))",
+                borderColor: "var(--border-strong)",
+              }}
+            >
+              <h2 className="section-title" style={{ marginBottom: 12 }}>
+                Got something to build?
+              </h2>
+              <p className="section-lead" style={{ margin: "0 auto 28px" }}>
+                Tell us about your project and we&apos;ll get back within one business day.
+              </p>
+              <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
+                <Link href="/get-quote" className="btn btn-primary">Get a quote</Link>
+                <Link href="/contact" className="btn btn-ghost">Talk to us</Link>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+    </>
+  );
+}

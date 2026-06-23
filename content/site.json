@@ -1,0 +1,84 @@
+{
+  "name": "Tomotik",
+  "tagline": "We build software that catches fire.",
+  "description": "Tomotik is a product studio designing and shipping fast, modern web platforms — from marketing sites to full-stack systems.",
+  "email": "hello@tomotik.com",
+  "phone": "+880 1700 000000",
+  "location": "Dhaka, Bangladesh — working worldwide",
+  "social": {
+    "twitter": "https://twitter.com/tomotik",
+    "linkedin": "https://linkedin.com/company/tomotik",
+    "github": "https://github.com/tomotik"
+  },
+  "nav": [
+    { "label": "Services", "href": "/services" },
+    { "label": "Work", "href": "/work" },
+    { "label": "Pricing", "href": "/pricing" },
+    { "label": "Blog", "href": "/blog" },
+    { "label": "About", "href": "/about" },
+    { "label": "Contact", "href": "/contact" }
+  ],
+  "services": [
+    {
+      "title": "Web Platforms",
+      "icon": "▲",
+      "summary": "Production-grade Next.js apps — marketing sites, dashboards, and full-stack systems built to scale.",
+      "points": ["Next.js + TypeScript", "Design systems", "CMS & dashboards"]
+    },
+    {
+      "title": "Product Design",
+      "icon": "◆",
+      "summary": "Interfaces that feel inevitable. We design the flow, the system, and the details that make it sing.",
+      "points": ["UX & UI design", "Prototyping", "Brand systems"]
+    },
+    {
+      "title": "Growth Engineering",
+      "icon": "✦",
+      "summary": "SEO, analytics, and conversion-focused builds that turn visitors into a measurable pipeline.",
+      "points": ["Technical SEO", "Lead capture", "Analytics"]
+    }
+  ],
+  "process": [
+    { "step": "01", "title": "Discovery", "body": "We map the problem, the audience, and the metric that matters." },
+    { "step": "02", "title": "Design", "body": "Systems-first design — fast to iterate, ready to build." },
+    { "step": "03", "title": "Build", "body": "Clean, typed, tested code shipped in tight increments." },
+    { "step": "04", "title": "Launch", "body": "Deploy, measure, and keep the flame going post-launch." }
+  ],
+  "stats": [
+    { "num": "40+", "label": "Products shipped" },
+    { "num": "98%", "label": "Client retention" },
+    { "num": "4.9/5", "label": "Average rating" }
+  ],
+  "pricing": [
+    {
+      "name": "Launch",
+      "price": "$2,500",
+      "cadence": "one-off",
+      "summary": "A sharp marketing site to put your brand on the map.",
+      "features": ["Up to 6 pages", "Custom design system", "CMS-ready content", "Basic SEO", "2 weeks delivery"],
+      "featured": false
+    },
+    {
+      "name": "Scale",
+      "price": "$7,500",
+      "cadence": "one-off",
+      "summary": "Full-stack product with auth, database, and a custom dashboard.",
+      "features": ["Everything in Launch", "Auth + user roles", "Database + admin CMS", "Lead / CRM dashboard", "Client portal", "6 weeks delivery"],
+      "featured": true
+    },
+    {
+      "name": "Partner",
+      "price": "$3,000",
+      "cadence": "/month",
+      "summary": "Ongoing design + engineering as your embedded product team.",
+      "features": ["Dedicated capacity", "Roadmap & strategy", "Continuous delivery", "Priority support", "Monthly reporting"],
+      "featured": false
+    }
+  ],
+  "faqs": [
+    { "q": "How fast can you start?", "a": "Usually within a week. We scope tightly so we can move fast without surprises." },
+    { "q": "Do you work with existing teams?", "a": "Yes — we embed alongside in-house teams or run the whole build end to end." },
+    { "q": "What's your stack?", "a": "Next.js, TypeScript, Prisma, and modern hosting. We pick boring, reliable tools that scale." },
+    { "q": "Do you offer ongoing support?", "a": "Our Partner plan covers continuous delivery, support, and iteration after launch." }
+  ]
+}

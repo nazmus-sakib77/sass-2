@@ -1,0 +1,180 @@
+/* =========================================================================
+   Framer Motion–style polish for Elementor
+   Paste into: Elementor → Site Settings → Custom CSS
+   (or Appearance → Customize → Additional CSS on free Elementor)
+
+   These rules add the "feel" Elementor's built-in animations don't:
+   smooth physics-like easing, springy hover, gradient text, glassy cards,
+   and a floating gradient blob. They pair with framer-scroll.js.
+   ========================================================================= */
+
+:root {
+  /* One easing curve used everywhere = consistent, "designed" motion.
+     This is close to Framer Motion's default spring settle.            */
+  --fm-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --fm-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1); /* slight overshoot */
+  --fm-fast: 0.45s;
+  --fm-slow: 0.8s;
+
+  --fm-ink: #0b0b12;
+  --fm-grad-a: #6366f1; /* indigo  */
+  --fm-grad-b: #a855f7; /* purple  */
+  --fm-grad-c: #ec4899; /* pink    */
+}
+
+/* Respect users who don't want motion ----------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ------------------------------------------------------------------------ */
+/* Scroll-reveal hook (driven by framer-scroll.js)                          */
+/* Add the CSS class `fm-reveal` to any Elementor widget/section's          */
+/* Advanced → CSS Classes field. It starts hidden and animates in.          */
+/* ------------------------------------------------------------------------ */
+.fm-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity var(--fm-slow) var(--fm-ease),
+              transform var(--fm-slow) var(--fm-ease);
+  will-change: opacity, transform;
+}
+.fm-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stagger children: give a parent `fm-stagger` and its direct .fm-reveal
+   children cascade in one after another.                                   */
+.fm-stagger .fm-reveal:nth-child(1) { transition-delay: 0.05s; }
+.fm-stagger .fm-reveal:nth-child(2) { transition-delay: 0.15s; }
+.fm-stagger .fm-reveal:nth-child(3) { transition-delay: 0.25s; }
+.fm-stagger .fm-reveal:nth-child(4) { transition-delay: 0.35s; }
+.fm-stagger .fm-reveal:nth-child(5) { transition-delay: 0.45s; }
+
+/* Variants — add alongside fm-reveal */
+.fm-reveal.from-left  { transform: translateX(-40px); }
+.fm-reveal.from-right { transform: translateX(40px); }
+.fm-reveal.zoom-in    { transform: scale(0.92); }
+.fm-reveal.from-left.is-visible,
+.fm-reveal.from-right.is-visible,
+.fm-reveal.zoom-in.is-visible { transform: none; }
+
+/* ------------------------------------------------------------------------ */
+/* Springy hover for cards & buttons                                        */
+/* Add class `fm-spring` to icon boxes, cards, buttons.                     */
+/* ------------------------------------------------------------------------ */
+.fm-spring {
+  transition: transform var(--fm-fast) var(--fm-ease-spring),
+              box-shadow var(--fm-fast) var(--fm-ease);
+  will-change: transform;
+}
+.fm-spring:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 48px -16px rgba(99, 102, 241, 0.35);
+}
+
+/* Glassy card surface — add class `fm-glass` */
+.fm-glass {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+}
+
+/* ------------------------------------------------------------------------ */
+/* Gradient animated text — add class `fm-gradient-text` to a Heading       */
+/* ------------------------------------------------------------------------ */
+.fm-gradient-text,
+.fm-gradient-text * {
+  background: linear-gradient(
+    100deg,
+    var(--fm-grad-a),
+    var(--fm-grad-b),
+    var(--fm-grad-c),
+    var(--fm-grad-a)
+  );
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: fm-gradient-pan 6s linear infinite;
+}
+@keyframes fm-gradient-pan {
+  to { background-position: 220% 0; }
+}
+
+/* ------------------------------------------------------------------------ */
+/* Floating gradient blob — add class `fm-blob` to an empty column/spacer   */
+/* ------------------------------------------------------------------------ */
+.fm-blob::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle at 30% 30%, var(--fm-grad-b), transparent 60%),
+              radial-gradient(circle at 70% 70%, var(--fm-grad-c), transparent 60%);
+  filter: blur(60px);
+  opacity: 0.5;
+  border-radius: 50%;
+  animation: fm-float 9s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+@keyframes fm-float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(30px, -40px) scale(1.08); }
+  66%      { transform: translate(-25px, 20px) scale(0.96); }
+}
+
+/* Animated scroll cue for the hero — add class `fm-scroll-cue` */
+.fm-scroll-cue {
+  width: 26px;
+  height: 42px;
+  border: 2px solid currentColor;
+  border-radius: 14px;
+  position: relative;
+  opacity: 0.7;
+  margin: 0 auto;
+}
+.fm-scroll-cue::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 8px;
+  width: 4px;
+  height: 8px;
+  margin-left: -2px;
+  border-radius: 2px;
+  background: currentColor;
+  animation: fm-scroll-dot 1.6s var(--fm-ease) infinite;
+}
+@keyframes fm-scroll-dot {
+  0%   { transform: translateY(0);    opacity: 1; }
+  70%  { transform: translateY(14px); opacity: 0; }
+  100% { transform: translateY(0);    opacity: 0; }
+}
+
+/* Underline-grow link — add class `fm-underline` to text links */
+.fm-underline { position: relative; text-decoration: none; }
+.fm-underline::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -3px;
+  width: 100%; height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--fm-fast) var(--fm-ease);
+}
+.fm-underline:hover::after { transform: scaleX(1); }

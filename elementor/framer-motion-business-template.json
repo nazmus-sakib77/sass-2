@@ -1,0 +1,670 @@
+{
+  "version": "0.4",
+  "title": "Framer Motion Business",
+  "type": "page",
+  "content": [
+    {
+      "id": "a1000hero",
+      "elType": "section",
+      "settings": {
+        "layout": "full_width",
+        "height": "min-height",
+        "custom_height": { "unit": "vh", "size": 100 },
+        "content_position": "middle",
+        "background_background": "gradient",
+        "background_color": "#0b0b12",
+        "background_color_b": "#1b1140",
+        "background_gradient_angle": { "unit": "deg", "size": 160 },
+        "padding": { "unit": "px", "top": "120", "right": "20", "bottom": "120", "left": "20", "isLinked": false },
+        "css_classes": "fm-stagger"
+      },
+      "elements": [
+        {
+          "id": "a1010col0",
+          "elType": "column",
+          "settings": { "_column_size": 100, "_inline_size": null, "content_position": "center" },
+          "elements": [
+            {
+              "id": "a1011badge",
+              "elType": "widget",
+              "settings": {
+                "title": "✦ New — Motion-first WordPress experiences",
+                "header_size": "div",
+                "align": "center",
+                "title_color": "#c4b5fd",
+                "_css_classes": "fm-reveal",
+                "_animation": "fadeInDown",
+                "_animation_delay": 0
+              },
+              "elements": [],
+              "widgetType": "heading"
+            },
+            {
+              "id": "a1012head0",
+              "elType": "widget",
+              "settings": {
+                "title": "Websites that move\nlike they mean it.",
+                "header_size": "h1",
+                "align": "center",
+                "title_color": "#ffffff",
+                "typography_typography": "custom",
+                "typography_font_size": { "unit": "px", "size": 64 },
+                "typography_font_weight": "800",
+                "typography_line_height": { "unit": "em", "size": 1.05 },
+                "_css_classes": "fm-reveal",
+                "_animation": "fadeInUp",
+                "_animation_delay": 100
+              },
+              "elements": [],
+              "widgetType": "heading"
+            },
+            {
+              "id": "a1013sub00",
+              "elType": "widget",
+              "settings": {
+                "editor": "<p>We design and build animated, conversion-focused business sites — smooth scroll reveals, springy interactions, and zero jank. All editable in Elementor.</p>",
+                "align": "center",
+                "text_color": "#b4b4c7",
+                "typography_typography": "custom",
+                "typography_font_size": { "unit": "px", "size": 19 },
+                "typography_line_height": { "unit": "em", "size": 1.7 },
+                "_css_classes": "fm-reveal",
+                "_animation": "fadeInUp",
+                "_animation_delay": 200
+              },
+              "elements": [],
+              "widgetType": "text-editor"
+            },
+            {
+              "id": "a1014btns0",
+              "elType": "section",
+              "isInner": true,
+              "settings": {
+                "structure": "20",
+                "content_width": { "unit": "px", "size": 520 },
+                "_css_classes": "fm-reveal",
+                "_animation": "fadeInUp",
+                "_animation_delay": 300
+              },
+              "elements": [
+                {
+                  "id": "a1015colb1",
+                  "elType": "column",
+                  "settings": { "_column_size": 50, "_inline_size": null },
+                  "elements": [
+                    {
+                      "id": "a1016btn01",
+                      "elType": "widget",
+                      "settings": {
+                        "text": "Start your project",
+                        "align": "right",
+                        "background_color": "#6366f1",
+                        "button_text_color": "#ffffff",
+                        "border_radius": { "unit": "px", "top": "12", "right": "12", "bottom": "12", "left": "12", "isLinked": true },
+                        "text_padding": { "unit": "px", "top": "16", "right": "28", "bottom": "16", "left": "28", "isLinked": false },
+                        "_css_classes": "fm-spring"
+                      },
+                      "elements": [],
+                      "widgetType": "button"
+                    }
+                  ]
+                },
+                {
+                  "id": "a1017colb2",
+                  "elType": "column",
+                  "settings": { "_column_size": 50, "_inline_size": null },
+                  "elements": [
+                    {
+                      "id": "a1018btn02",
+                      "elType": "widget",
+                      "settings": {
+                        "text": "See our work",
+                        "align": "left",
+                        "button_type": "default",
+                        "background_color": "rgba(255,255,255,0.08)",
+                        "button_text_color": "#ffffff",
+                        "border_border": "solid",
+                        "border_width": { "unit": "px", "top": "1", "right": "1", "bottom": "1", "left": "1", "isLinked": true },
+                        "border_color": "rgba(255,255,255,0.25)",
+                        "border_radius": { "unit": "px", "top": "12", "right": "12", "bottom": "12", "left": "12", "isLinked": true },
+                        "text_padding": { "unit": "px", "top": "16", "right": "28", "bottom": "16", "left": "28", "isLinked": false },
+                        "_css_classes": "fm-spring"
+                      },
+                      "elements": [],
+                      "widgetType": "button"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "a1019cue00",
+              "elType": "widget",
+              "settings": {
+                "html": "<div class=\"fm-scroll-cue\" style=\"color:#ffffff;margin-top:56px;\"></div>"
+              },
+              "elements": [],
+              "widgetType": "html"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "b2000trust",
+      "elType": "section",
+      "settings": {
+        "background_background": "classic",
+        "background_color": "#0b0b12",
+        "padding": { "unit": "px", "top": "40", "right": "20", "bottom": "40", "left": "20", "isLinked": false }
+      },
+      "elements": [
+        {
+          "id": "b2010col0",
+          "elType": "column",
+          "settings": { "_column_size": 100, "_inline_size": null },
+          "elements": [
+            {
+              "id": "b2011lbl0",
+              "elType": "widget",
+              "settings": {
+                "editor": "<p>TRUSTED BY FAST-MOVING TEAMS</p>",
+                "align": "center",
+                "text_color": "#6b6b80",
+                "typography_typography": "custom",
+                "typography_font_size": { "unit": "px", "size": 13 },
+                "typography_letter_spacing": { "unit": "px", "size": 2 },
+                "typography_font_weight": "600",
+                "_css_classes": "fm-reveal"
+              },
+              "elements": [],
+              "widgetType": "text-editor"
+            },
+            {
+              "id": "b2012logos",
+              "elType": "widget",
+              "settings": {
+                "html": "<div style=\"display:flex;gap:48px;justify-content:center;flex-wrap:wrap;opacity:.6;font-weight:700;font-size:22px;color:#fff;letter-spacing:.5px;margin-top:14px;\"><span>Northwind</span><span>Lumen</span><span>Apex</span><span>Verve</span><span>Quanta</span></div>",
+                "_css_classes": "fm-reveal",
+                "_animation_delay": 100
+              },
+              "elements": [],
+              "widgetType": "html"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "c3000feat0",
+      "elType": "section",
+      "settings": {
+        "background_background": "classic",
+        "background_color": "#ffffff",
+        "padding": { "unit": "px", "top": "100", "right": "20", "bottom": "100", "left": "20", "isLinked": false },
+        "css_classes": "fm-stagger"
+      },
+      "elements": [
+        {
+          "id": "c3010colh",
+          "elType": "column",
+          "settings": { "_column_size": 100, "_inline_size": null },
+          "elements": [
+            {
+              "id": "c3011eyeb",
+              "elType": "widget",
+              "settings": {
+                "title": "WHY TEAMS PICK US",
+                "header_size": "div",
+                "align": "center",
+                "title_color": "#6366f1",
+                "typography_typography": "custom",
+                "typography_font_size": { "unit": "px", "size": 13 },
+                "typography_letter_spacing": { "unit": "px", "size": 2 },
+                "typography_font_weight": "700",
+                "_css_classes": "fm-reveal"
+              },
+              "elements": [],
+              "widgetType": "heading"
+            },
+            {
+              "id": "c3012h2t0",
+              "elType": "widget",
+              "settings": {
+                "title": "Built for motion, made for results",
+                "header_size": "h2",
+                "align": "center",
+                "title_color": "#0b0b12",
+                "typography_typography": "custom",
+                "typography_font_size": { "unit": "px", "size": 42 },
+                "typography_font_weight": "800",
+                "_css_classes": "fm-reveal",
+                "_animation": "fadeInUp",
+                "_animation_delay": 100
+              },
+              "elements": [],
+              "widgetType": "heading"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "c3100feat1",
+      "elType": "section",
+      "settings": {
+        "structure": "30",
+        "background_background": "classic",
+        "background_color": "#ffffff",
+        "gap": "wide",
+        "padding": { "unit": "px", "top": "0", "right": "20", "bottom": "100", "left": "20", "isLinked": false },
+        "css_classes": "fm-stagger"
+      },
+      "elements": [
+        {
+          "id": "c3110cl01",
+          "elType": "column",
+          "settings": { "_column_size": 33, "_inline_size": null },
+          "elements": [
+            {
+              "id": "c3111ib01",
+              "elType": "widget",
+              "settings": {
+                "selected_icon": { "value": "fas fa-bolt", "library": "fa-solid" },
+                "title_text": "Buttery-smooth motion",
+                "description_text": "Scroll reveals, parallax, and spring hovers tuned with one consistent easing curve — no janky, random animations.",
+                "position": "top",
+                "title_color": "#0b0b12",
+                "description_color": "#5b5b6b",
+                "primary_color": "#6366f1",
+                "icon_size": { "unit": "px", "size": 28 },
+                "icon_padding": { "unit": "px", "size": 22 },
+                "_css_classes": "fm-reveal fm-spring fm-glass",
+                "_animation": "fadeInUp",
+                "_padding": { "unit": "px", "top": "32", "right": "28", "bottom": "32", "left": "28", "isLinked": false }
+              },
+              "elements": [],
+              "widgetType": "icon-box"
+            }
+          ]
+        },
+        {
+          "id": "c3120cl02",
+          "elType": "column",
+          "settings": { "_column_size": 33, "_inline_size": null },
+          "elements": [
+            {
+              "id": "c3121ib02",
+              "elType": "widget",
+              "settings": {
+                "selected_icon": { "value": "fas fa-wand-magic-sparkles", "library": "fa-solid" },
+                "title_text": "Edit it all in Elementor",
+                "description_text": "No code lock-in. Every section, color, and word is editable visually. The motion just works on whatever you type.",
+                "position": "top",
+                "title_color": "#0b0b12",
+                "description_color": "#5b5b6b",
+                "primary_color": "#a855f7",
+                "icon_size": { "unit": "px", "size": 28 },
+                "icon_padding": { "unit": "px", "size": 22 },
+                "_css_classes": "fm-reveal fm-spring fm-glass",
+                "_animation": "fadeInUp",
+                "_animation_delay": 120,
+                "_padding": { "unit": "px", "top": "32", "right": "28", "bottom": "32", "left": "28", "isLinked": false }
+              },
+              "elements": [],
+              "widgetType": "icon-box"
+            }
+          ]
+        },
+        {
+          "id": "c3130cl03",
+          "elType": "column",
+          "settings": { "_column_size": 33, "_inline_size": null },
+          "elements": [
+            {
+              "id": "c3131ib03",
+              "elType": "widget",
+              "settings": {
+                "selected_icon": { "value": "fas fa-gauge-high", "library": "fa-solid" },
+                "title_text": "Fast & accessible",
+                "description_text": "Lightweight vanilla JS, lazy reveals, and full prefers-reduced-motion support. Great Core Web Vitals out of the box.",
+                "position": "top",
+                "title_color": "#0b0b12",
+                "description_color": "#5b5b6b",
+                "primary_color": "#ec4899",
+                "icon_size": { "unit": "px", "size": 28 },
+                "icon_padding": { "unit": "px", "size": 22 },
+                "_css_classes": "fm-reveal fm-spring fm-glass",
+                "_animation": "fadeInUp",
+                "_animation_delay": 240,
+                "_padding": { "unit": "px", "top": "32", "right": "28", "bottom": "32", "left": "28", "isLinked": false }
+              },
+              "elements": [],
+              "widgetType": "icon-box"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "d4000show0",
+      "elType": "section",
+      "settings": {
+        "structure": "20",
+        "background_background": "classic",
+        "background_color": "#f6f5ff",
+        "gap": "wide",
+        "content_position": "middle",
+        "padding": { "unit": "px", "top": "100", "right": "20", "bottom": "100", "left": "20", "isLinked": false }
+      },
+      "elements": [
+        {
+          "id": "d4010cl01",
+          "elType": "column",
+          "settings": { "_column_size": 50, "_inline_size": null, "content_position": "center" },
+          "elements": [
+            {
+              "id": "d4011h2t0",
+              "elType": "widget",
+              "settings": {
+                "title": "Design once. Delight on every scroll.",
+                "header_size": "h2",
+                "title_color": "#0b0b12",
+                "typography_typography": "custom",
+                "typography_font_size": { "unit": "px", "size": 40 },
+                "typography_font_weight": "800",
+                "typography_line_height": { "unit": "em", "size": 1.1 },
+                "_css_classes": "fm-reveal from-left"
+              },
+              "elements": [],
+              "widgetType": "heading"
+            },
+            {
+              "id": "d4012txt0",
+              "elType": "widget",
+              "settings": {
+                "editor": "<p>Sections fade and slide into place as visitors scroll, images drift with gentle parallax, and numbers count up on cue. The result feels premium and intentional — the way a Framer site feels — without leaving WordPress.</p>",
+                "text_color": "#5b5b6b",
+                "typography_typography": "custom",
+                "typography_font_size": { "unit": "px", "size": 18 },
+                "typography_line_height": { "unit": "em", "size": 1.8 },
+                "_css_classes": "fm-reveal from-left",
+                "_animation_delay": 120
+              },
+              "elements": [],
+              "widgetType": "text-editor"
+            },
+            {
+              "id": "d4013btn0",
+              "elType": "widget",
+              "settings": {
+                "text": "Explore the motion system",
+                "align": "left",
+                "background_color": "#0b0b12",
+                "button_text_color": "#ffffff",
+                "border_radius": { "unit": "px", "top": "12", "right": "12", "bottom": "12", "left": "12", "isLinked": true },
+                "text_padding": { "unit": "px", "top": "16", "right": "28", "bottom": "16", "left": "28", "isLinked": false },
+                "_css_classes": "fm-reveal from-left fm-spring",
+                "_animation_delay": 220
+              },
+              "elements": [],
+              "widgetType": "button"
+            }
+          ]
+        },
+        {
+          "id": "d4020cl02",
+          "elType": "column",
+          "settings": { "_column_size": 50, "_inline_size": null },
+          "elements": [
+            {
+              "id": "d4021img0",
+              "elType": "widget",
+              "settings": {
+                "html": "<div class=\"fm-parallax\" data-fm-speed=\"0.22\" style=\"position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,#6366f1,#a855f7 45%,#ec4899);box-shadow:0 40px 80px -30px rgba(99,102,241,.6);\"><div style=\"position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:26px;letter-spacing:.5px;\">Your visuals here</div></div>",
+                "_css_classes": "fm-reveal zoom-in"
+              },
+              "elements": [],
+              "widgetType": "html"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "e5000stat0",
+      "elType": "section",
+      "settings": {
+        "structure": "30",
+        "background_background": "gradient",
+        "background_color": "#6366f1",
+        "background_color_b": "#a855f7",
+        "background_gradient_angle": { "unit": "deg", "size": 120 },
+        "gap": "wide",
+        "padding": { "unit": "px", "top": "80", "right": "20", "bottom": "80", "left": "20", "isLinked": false },
+        "css_classes": "fm-stagger"
+      },
+      "elements": [
+        {
+          "id": "e5010cl01",
+          "elType": "column",
+          "settings": { "_column_size": 33, "_inline_size": null },
+          "elements": [
+            {
+              "id": "e5011num1",
+              "elType": "widget",
+              "settings": {
+                "html": "<div style=\"text-align:center;color:#fff;\"><div class=\"fm-count\" style=\"font-size:54px;font-weight:800;\">240</div><div style=\"opacity:.85;font-size:15px;letter-spacing:1px;margin-top:6px;\">PROJECTS SHIPPED</div></div>",
+                "_css_classes": "fm-reveal"
+              },
+              "elements": [],
+              "widgetType": "html"
+            }
+          ]
+        },
+        {
+          "id": "e5020cl02",
+          "elType": "column",
+          "settings": { "_column_size": 33, "_inline_size": null },
+          "elements": [
+            {
+              "id": "e5021num2",
+              "elType": "widget",
+              "settings": {
+                "html": "<div style=\"text-align:center;color:#fff;\"><div class=\"fm-count\" data-fm-duration=\"1800\" style=\"font-size:54px;font-weight:800;\">98%</div><div style=\"opacity:.85;font-size:15px;letter-spacing:1px;margin-top:6px;\">CLIENT SATISFACTION</div></div>",
+                "_css_classes": "fm-reveal",
+                "_animation_delay": 120
+              },
+              "elements": [],
+              "widgetType": "html"
+            }
+          ]
+        },
+        {
+          "id": "e5030cl03",
+          "elType": "column",
+          "settings": { "_column_size": 33, "_inline_size": null },
+          "elements": [
+            {
+              "id": "e5031num3",
+              "elType": "widget",
+              "settings": {
+                "html": "<div style=\"text-align:center;color:#fff;\"><div class=\"fm-count\" data-fm-duration=\"2000\" style=\"font-size:54px;font-weight:800;\">1.2</div><div style=\"opacity:.85;font-size:15px;letter-spacing:1px;margin-top:6px;\">AVG. SECONDS TO LOAD</div></div>",
+                "_css_classes": "fm-reveal",
+                "_animation_delay": 240
+              },
+              "elements": [],
+              "widgetType": "html"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "f6000test0",
+      "elType": "section",
+      "settings": {
+        "background_background": "classic",
+        "background_color": "#ffffff",
+        "padding": { "unit": "px", "top": "100", "right": "20", "bottom": "60", "left": "20", "isLinked": false }
+      },
+      "elements": [
+        {
+          "id": "f6010col0",
+          "elType": "column",
+          "settings": { "_column_size": 100, "_inline_size": null },
+          "elements": [
+            {
+              "id": "f6011h2t0",
+              "elType": "widget",
+              "settings": {
+                "title": "Loved by the people who launch",
+                "header_size": "h2",
+                "align": "center",
+                "title_color": "#0b0b12",
+                "typography_typography": "custom",
+                "typography_font_size": { "unit": "px", "size": 40 },
+                "typography_font_weight": "800",
+                "_css_classes": "fm-reveal"
+              },
+              "elements": [],
+              "widgetType": "heading"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "f6100test1",
+      "elType": "section",
+      "settings": {
+        "structure": "20",
+        "background_background": "classic",
+        "background_color": "#ffffff",
+        "gap": "wide",
+        "padding": { "unit": "px", "top": "20", "right": "20", "bottom": "100", "left": "20", "isLinked": false },
+        "css_classes": "fm-stagger"
+      },
+      "elements": [
+        {
+          "id": "f6110cl01",
+          "elType": "column",
+          "settings": { "_column_size": 50, "_inline_size": null },
+          "elements": [
+            {
+              "id": "f6111tst1",
+              "elType": "widget",
+              "settings": {
+                "html": "<blockquote style=\"margin:0;padding:32px;border-radius:20px;background:#f6f5ff;border:1px solid #ece9ff;\"><p style=\"font-size:19px;line-height:1.7;color:#1b1140;margin:0 0 18px;\">“Our bounce rate dropped and demos went up. The site finally feels like our brand — alive, fast, and effortless to update.”</p><div style=\"display:flex;align-items:center;gap:12px;\"><div style=\"width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#ec4899);\"></div><div><strong style=\"color:#0b0b12;\">Maya Chen</strong><br><span style=\"color:#7a7a8c;font-size:14px;\">Head of Growth, Lumen</span></div></div></blockquote>",
+                "_css_classes": "fm-reveal from-left fm-spring"
+              },
+              "elements": [],
+              "widgetType": "html"
+            }
+          ]
+        },
+        {
+          "id": "f6120cl02",
+          "elType": "column",
+          "settings": { "_column_size": 50, "_inline_size": null },
+          "elements": [
+            {
+              "id": "f6121tst2",
+              "elType": "widget",
+              "settings": {
+                "html": "<blockquote style=\"margin:0;padding:32px;border-radius:20px;background:#f6f5ff;border:1px solid #ece9ff;\"><p style=\"font-size:19px;line-height:1.7;color:#1b1140;margin:0 0 18px;\">“They delivered a Framer-grade experience on WordPress. My team edits everything in Elementor and nothing ever breaks.”</p><div style=\"display:flex;align-items:center;gap:12px;\"><div style=\"width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#a855f7,#6366f1);\"></div><div><strong style=\"color:#0b0b12;\">Daniel Ortega</strong><br><span style=\"color:#7a7a8c;font-size:14px;\">Founder, Apex Studio</span></div></div></blockquote>",
+                "_css_classes": "fm-reveal from-right fm-spring",
+                "_animation_delay": 120
+              },
+              "elements": [],
+              "widgetType": "html"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "g7000cta00",
+      "elType": "section",
+      "settings": {
+        "height": "min-height",
+        "custom_height": { "unit": "vh", "size": 70 },
+        "content_position": "middle",
+        "background_background": "gradient",
+        "background_color": "#1b1140",
+        "background_color_b": "#0b0b12",
+        "background_gradient_angle": { "unit": "deg", "size": 160 },
+        "overflow": "hidden",
+        "padding": { "unit": "px", "top": "100", "right": "20", "bottom": "100", "left": "20", "isLinked": false },
+        "css_classes": "fm-blob"
+      },
+      "elements": [
+        {
+          "id": "g7010col0",
+          "elType": "column",
+          "settings": { "_column_size": 100, "_inline_size": null, "content_position": "center", "z_index": 2 },
+          "elements": [
+            {
+              "id": "g7011h2t0",
+              "elType": "widget",
+              "settings": {
+                "title": "Ready to make your site move?",
+                "header_size": "h2",
+                "align": "center",
+                "title_color": "#ffffff",
+                "typography_typography": "custom",
+                "typography_font_size": { "unit": "px", "size": 48 },
+                "typography_font_weight": "800",
+                "_css_classes": "fm-reveal fm-gradient-text"
+              },
+              "elements": [],
+              "widgetType": "heading"
+            },
+            {
+              "id": "g7012sub0",
+              "elType": "widget",
+              "settings": {
+                "editor": "<p>Let's turn your WordPress site into a motion-first experience your visitors remember.</p>",
+                "align": "center",
+                "text_color": "#b4b4c7",
+                "typography_typography": "custom",
+                "typography_font_size": { "unit": "px", "size": 19 },
+                "_css_classes": "fm-reveal",
+                "_animation_delay": 120
+              },
+              "elements": [],
+              "widgetType": "text-editor"
+            },
+            {
+              "id": "g7013btn0",
+              "elType": "widget",
+              "settings": {
+                "text": "Book a free consult",
+                "align": "center",
+                "background_color": "#6366f1",
+                "button_text_color": "#ffffff",
+                "border_radius": { "unit": "px", "top": "12", "right": "12", "bottom": "12", "left": "12", "isLinked": true },
+                "text_padding": { "unit": "px", "top": "18", "right": "36", "bottom": "18", "left": "36", "isLinked": false },
+                "_css_classes": "fm-reveal fm-spring",
+                "_animation_delay": 220
+              },
+              "elements": [],
+              "widgetType": "button"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "page_settings": {
+    "hide_title": "yes"
+  }
+}

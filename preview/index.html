@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Framer Motion Business — Preview</title>
+<!--
+  Standalone preview of the Elementor template.
+  This mirrors the design + motion so you can see it WITHOUT WordPress.
+  In WordPress the same look is produced by importing the Elementor JSON
+  and adding framer-animations.css + framer-scroll.js.
+-->
+<style>
+  :root{
+    --fm-ease:cubic-bezier(0.22,1,0.36,1);
+    --fm-spring:cubic-bezier(0.34,1.56,0.64,1);
+    --a:#6366f1;--b:#a855f7;--c:#ec4899;--ink:#0b0b12;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.5}
+  section{padding:100px 24px}
+  .wrap{max-width:1100px;margin:0 auto}
+  h1,h2{font-weight:800;letter-spacing:-.02em}
+  .btn{display:inline-block;padding:16px 28px;border-radius:12px;font-weight:600;text-decoration:none;transition:transform .45s var(--fm-spring),box-shadow .45s var(--fm-ease);cursor:pointer;border:none;font-size:16px}
+  .btn:hover{transform:translateY(-6px);box-shadow:0 24px 48px -16px rgba(99,102,241,.45)}
+  .btn-primary{background:var(--a);color:#fff}
+  .btn-ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.25)}
+  .btn-dark{background:var(--ink);color:#fff}
+
+  /* reveal */
+  .fm-reveal{opacity:0;transform:translateY(28px);transition:opacity .8s var(--fm-ease),transform .8s var(--fm-ease)}
+  .fm-reveal.is-visible{opacity:1;transform:none}
+  .fm-reveal.from-left{transform:translateX(-40px)}
+  .fm-reveal.from-right{transform:translateX(40px)}
+  .fm-reveal.zoom-in{transform:scale(.92)}
+  .fm-reveal.from-left.is-visible,.fm-reveal.from-right.is-visible,.fm-reveal.zoom-in.is-visible{transform:none}
+
+  /* hero */
+  .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(160deg,#0b0b12,#1b1140);color:#fff}
+  .badge{color:#c4b5fd;font-size:14px;margin-bottom:18px}
+  .hero h1{font-size:clamp(36px,7vw,64px);line-height:1.05;margin-bottom:22px}
+  .hero p.sub{color:#b4b4c7;font-size:19px;max-width:620px;margin:0 auto 32px;line-height:1.7}
+  .hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  .scroll-cue{width:26px;height:42px;border:2px solid #fff;border-radius:14px;position:relative;opacity:.6;margin:56px auto 0}
+  .scroll-cue::after{content:"";position:absolute;left:50%;top:8px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:#fff;animation:dot 1.6s var(--fm-ease) infinite}
+  @keyframes dot{0%{transform:translateY(0);opacity:1}70%{transform:translateY(14px);opacity:0}100%{opacity:0}}
+
+  /* trust */
+  .trust{background:#0b0b12;padding:40px 24px;text-align:center}
+  .trust .lbl{color:#6b6b80;font-size:13px;letter-spacing:2px;font-weight:600}
+  .logos{display:flex;gap:48px;justify-content:center;flex-wrap:wrap;opacity:.6;font-weight:700;font-size:22px;color:#fff;margin-top:14px}
+
+  /* features */
+  .eyebrow{color:var(--a);font-size:13px;letter-spacing:2px;font-weight:700;text-align:center}
+  .section-h2{text-align:center;font-size:clamp(28px,5vw,42px);margin:10px 0 50px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .card{padding:32px 28px;border-radius:20px;background:rgba(255,255,255,.65);border:1px solid #eee;box-shadow:0 10px 30px -18px rgba(0,0,0,.2);transition:transform .45s var(--fm-spring),box-shadow .45s var(--fm-ease)}
+  .card:hover{transform:translateY(-8px);box-shadow:0 24px 48px -16px rgba(99,102,241,.35)}
+  .ico{width:64px;height:64px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;margin-bottom:18px}
+  .card h3{font-size:21px;margin-bottom:10px}
+  .card p{color:#5b5b6b;line-height:1.7}
+
+  /* showcase */
+  .showcase{background:#f6f5ff}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .split h2{font-size:clamp(28px,5vw,40px);line-height:1.1;margin-bottom:18px}
+  .split p{color:#5b5b6b;font-size:18px;line-height:1.8;margin-bottom:24px}
+  .visual{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,var(--a),var(--b) 45%,var(--c));box-shadow:0 40px 80px -30px rgba(99,102,241,.6);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:24px}
+
+  /* stats */
+  .stats{background:linear-gradient(120deg,var(--a),var(--b));color:#fff}
+  .stats .grid3{text-align:center}
+  .stat .num{font-size:54px;font-weight:800}
+  .stat .cap{opacity:.85;font-size:15px;letter-spacing:1px;margin-top:6px}
+
+  /* testimonials */
+  blockquote{margin:0;padding:32px;border-radius:20px;background:#f6f5ff;border:1px solid #ece9ff;transition:transform .45s var(--fm-spring)}
+  blockquote:hover{transform:translateY(-6px)}
+  blockquote p{font-size:19px;line-height:1.7;color:#1b1140;margin-bottom:18px}
+  .author{display:flex;align-items:center;gap:12px}
+  .avatar{width:44px;height:44px;border-radius:50%}
+  .author small{color:#7a7a8c}
+
+  /* cta */
+  .cta{min-height:70vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(160deg,#1b1140,#0b0b12);color:#fff;position:relative;overflow:hidden}
+  .cta::before{content:"";position:absolute;inset:0;margin:auto;width:420px;height:420px;background:radial-gradient(circle at 30% 30%,var(--b),transparent 60%),radial-gradient(circle at 70% 70%,var(--c),transparent 60%);filter:blur(60px);opacity:.5;border-radius:50%;animation:float 9s ease-in-out infinite}
+  @keyframes float{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-40px) scale(1.08)}66%{transform:translate(-25px,20px) scale(.96)}}
+  .cta .inner{position:relative;z-index:2}
+  .cta h2{font-size:clamp(32px,6vw,48px);background:linear-gradient(100deg,var(--a),var(--b),var(--c),var(--a));background-size:220% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:pan 6s linear infinite;margin-bottom:18px}
+  @keyframes pan{to{background-position:220% 0}}
+  .cta p{color:#b4b4c7;font-size:19px;margin-bottom:30px}
+
+  @media(max-width:820px){.grid3,.split{grid-template-columns:1fr}.split{gap:32px}}
+  @media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}.fm-reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="badge fm-reveal">✦ New — Motion-first WordPress experiences</div>
+      <h1 class="fm-reveal">Websites that move<br>like they mean it.</h1>
+      <p class="sub fm-reveal">We design and build animated, conversion-focused business sites — smooth scroll reveals, springy interactions, and zero jank. All editable in Elementor.</p>
+      <div class="hero-btns fm-reveal">
+        <a class="btn btn-primary" href="#cta">Start your project</a>
+        <a class="btn btn-ghost" href="#features">See our work</a>
+      </div>
+      <div class="scroll-cue"></div>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <div class="trust">
+    <div class="lbl fm-reveal">TRUSTED BY FAST-MOVING TEAMS</div>
+    <div class="logos fm-reveal"><span>Northwind</span><span>Lumen</span><span>Apex</span><span>Verve</span><span>Quanta</span></div>
+  </div>
+
+  <!-- FEATURES -->
+  <section id="features">
+    <div class="wrap">
+      <div class="eyebrow fm-reveal">WHY TEAMS PICK US</div>
+      <h2 class="section-h2 fm-reveal">Built for motion, made for results</h2>
+      <div class="grid3">
+        <div class="card fm-reveal">
+          <div class="ico" style="background:var(--a)">⚡</div>
+          <h3>Buttery-smooth motion</h3>
+          <p>Scroll reveals, parallax, and spring hovers tuned with one consistent easing curve — no janky, random animations.</p>
+        </div>
+        <div class="card fm-reveal">
+          <div class="ico" style="background:var(--b)">✨</div>
+          <h3>Edit it all in Elementor</h3>
+          <p>No code lock-in. Every section, color, and word is editable visually. The motion just works on whatever you type.</p>
+        </div>
+        <div class="card fm-reveal">
+          <div class="ico" style="background:var(--c)">⚡</div>
+          <h3>Fast &amp; accessible</h3>
+          <p>Lightweight vanilla JS, lazy reveals, and full prefers-reduced-motion support. Great Core Web Vitals out of the box.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOWCASE -->
+  <section class="showcase">
+    <div class="wrap split">
+      <div>
+        <h2 class="fm-reveal from-left">Design once. Delight on every scroll.</h2>
+        <p class="fm-reveal from-left">Sections fade and slide into place as visitors scroll, images drift with gentle parallax, and numbers count up on cue. The result feels premium and intentional — the way a Framer site feels — without leaving WordPress.</p>
+        <a class="btn btn-dark fm-reveal from-left" href="#cta">Explore the motion system</a>
+      </div>
+      <div class="visual fm-reveal zoom-in" data-parallax>Your visuals here</div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="wrap grid3">
+      <div class="stat fm-reveal"><div class="num" data-count="240">0</div><div class="cap">PROJECTS SHIPPED</div></div>
+      <div class="stat fm-reveal"><div class="num" data-count="98" data-suffix="%">0</div><div class="cap">CLIENT SATISFACTION</div></div>
+      <div class="stat fm-reveal"><div class="num" data-count="1.2" data-decimals="1">0</div><div class="cap">AVG. SECONDS TO LOAD</div></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section>
+    <div class="wrap">
+      <h2 class="section-h2 fm-reveal">Loved by the people who launch</h2>
+      <div class="split">
+        <blockquote class="fm-reveal from-left">
+          <p>“Our bounce rate dropped and demos went up. The site finally feels like our brand — alive, fast, and effortless to update.”</p>
+          <div class="author"><div class="avatar" style="background:linear-gradient(135deg,var(--a),var(--c))"></div><div><strong>Maya Chen</strong><br><small>Head of Growth, Lumen</small></div></div>
+        </blockquote>
+        <blockquote class="fm-reveal from-right">
+          <p>“They delivered a Framer-grade experience on WordPress. My team edits everything in Elementor and nothing ever breaks.”</p>
+          <div class="author"><div class="avatar" style="background:linear-gradient(135deg,var(--b),var(--a))"></div><div><strong>Daniel Ortega</strong><br><small>Founder, Apex Studio</small></div></div>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="cta">
+    <div class="inner wrap">
+      <h2 class="fm-reveal">Ready to make your site move?</h2>
+      <p class="fm-reveal">Let's turn your WordPress site into a motion-first experience your visitors remember.</p>
+      <a class="btn btn-primary fm-reveal" href="#">Book a free consult</a>
+    </div>
+  </section>
+
+<script>
+  // Mirrors framer-scroll.js so the preview behaves like the real site.
+  var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Reveal
+  var io = new IntersectionObserver(function(es,o){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("is-visible"); o.unobserve(e.target);} });
+  },{threshold:.15, rootMargin:"0px 0px -8% 0px"});
+  document.querySelectorAll(".fm-reveal").forEach(function(el){ reduce ? el.classList.add("is-visible") : io.observe(el); });
+
+  // Count-up
+  var ci = new IntersectionObserver(function(es,o){
+    es.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var el=e.target, target=parseFloat(el.dataset.count), dec=parseInt(el.dataset.decimals||0), suf=el.dataset.suffix||"", start=null;
+      if(reduce){ el.textContent=target+suf; o.unobserve(el); return; }
+      requestAnimationFrame(function step(ts){
+        if(start===null)start=ts;
+        var p=Math.min((ts-start)/1600,1), eased=1-Math.pow(1-p,3);
+        el.textContent=(target*eased).toFixed(dec)+suf;
+        if(p<1)requestAnimationFrame(step);
+      });
+      o.unobserve(el);
+    });
+  },{threshold:.6});
+  document.querySelectorAll("[data-count]").forEach(function(el){ ci.observe(el); });
+
+  // Parallax
+  var px=document.querySelector("[data-parallax]");
+  if(px && !reduce){
+    addEventListener("scroll",function(){
+      var r=px.getBoundingClientRect(), prog=(r.top+r.height/2-innerHeight/2)/innerHeight;
+      px.style.transform="translate3d(0,"+(-prog*22).toFixed(1)+"px,0)";
+    },{passive:true});
+  }
+</script>
+</body>
+</html>

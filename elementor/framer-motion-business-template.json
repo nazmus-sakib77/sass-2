@@ -1,357 +1,594 @@
 {
   "version": "0.4",
-  "title": "Framer Motion Business",
+  "title": "Framer Motion Business — Coaches & Consultants",
   "type": "page",
   "content": [
     {
-      "id": "a1000hero",
+      "id": "sec_hero",
       "elType": "section",
       "settings": {
         "layout": "full_width",
         "height": "min-height",
-        "custom_height": { "unit": "vh", "size": 100 },
+        "custom_height": {
+          "unit": "vh",
+          "size": 100
+        },
         "content_position": "middle",
         "background_background": "gradient",
         "background_color": "#0b0b12",
         "background_color_b": "#1b1140",
-        "background_gradient_angle": { "unit": "deg", "size": 160 },
-        "padding": { "unit": "px", "top": "120", "right": "20", "bottom": "120", "left": "20", "isLinked": false },
+        "background_gradient_angle": {
+          "unit": "deg",
+          "size": 155
+        },
+        "padding": {
+          "unit": "px",
+          "top": "120",
+          "right": "24",
+          "bottom": "120",
+          "left": "24",
+          "isLinked": false
+        },
         "css_classes": "fm-stagger"
       },
       "elements": [
         {
-          "id": "a1010col0",
+          "id": "col_hero",
           "elType": "column",
-          "settings": { "_column_size": 100, "_inline_size": null, "content_position": "center" },
+          "settings": {
+            "_column_size": 100,
+            "content_position": "center"
+          },
           "elements": [
             {
-              "id": "a1011badge",
+              "id": "w_badge",
               "elType": "widget",
+              "widgetType": "heading",
               "settings": {
-                "title": "✦ New — Motion-first WordPress experiences",
+                "title": "For Coaches, Consultants & Personal Brands",
                 "header_size": "div",
                 "align": "center",
                 "title_color": "#c4b5fd",
-                "_css_classes": "fm-reveal",
-                "_animation": "fadeInDown",
-                "_animation_delay": 0
+                "typography_typography": "custom",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 14
+                },
+                "typography_letter_spacing": {
+                  "unit": "px",
+                  "size": 2
+                },
+                "typography_font_weight": "600",
+                "_css_classes": "fm-reveal"
               },
-              "elements": [],
-              "widgetType": "heading"
+              "elements": []
             },
             {
-              "id": "a1012head0",
+              "id": "w_h1",
               "elType": "widget",
+              "widgetType": "heading",
               "settings": {
-                "title": "Websites that move\nlike they mean it.",
+                "title": "One partner for your website, brand &amp; automation.",
                 "header_size": "h1",
                 "align": "center",
                 "title_color": "#ffffff",
                 "typography_typography": "custom",
-                "typography_font_size": { "unit": "px", "size": 64 },
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 58
+                },
                 "typography_font_weight": "800",
-                "typography_line_height": { "unit": "em", "size": 1.05 },
+                "typography_line_height": {
+                  "unit": "em",
+                  "size": 1.08
+                },
                 "_css_classes": "fm-reveal",
-                "_animation": "fadeInUp",
                 "_animation_delay": 100
               },
-              "elements": [],
-              "widgetType": "heading"
+              "elements": []
             },
             {
-              "id": "a1013sub00",
+              "id": "w_sub",
               "elType": "widget",
+              "widgetType": "text-editor",
               "settings": {
-                "editor": "<p>We design and build animated, conversion-focused business sites — smooth scroll reveals, springy interactions, and zero jank. All editable in Elementor.</p>",
+                "editor": "<p>Stop juggling multiple freelancers. I bring together professional web design, cohesive branding, and smart automation so your online presence looks great and works efficiently behind the scenes.</p>",
                 "align": "center",
                 "text_color": "#b4b4c7",
                 "typography_typography": "custom",
-                "typography_font_size": { "unit": "px", "size": 19 },
-                "typography_line_height": { "unit": "em", "size": 1.7 },
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 19
+                },
+                "typography_line_height": {
+                  "unit": "em",
+                  "size": 1.75
+                },
                 "_css_classes": "fm-reveal",
-                "_animation": "fadeInUp",
-                "_animation_delay": 200
+                "_animation_delay": 180
               },
-              "elements": [],
-              "widgetType": "text-editor"
+              "elements": []
             },
             {
-              "id": "a1014btns0",
+              "id": "sec_btns",
               "elType": "section",
               "isInner": true,
               "settings": {
                 "structure": "20",
-                "content_width": { "unit": "px", "size": 520 },
+                "content_width": {
+                  "unit": "px",
+                  "size": 480
+                },
                 "_css_classes": "fm-reveal",
-                "_animation": "fadeInUp",
-                "_animation_delay": 300
+                "_animation_delay": 280
               },
               "elements": [
                 {
-                  "id": "a1015colb1",
+                  "id": "col_btn1",
                   "elType": "column",
-                  "settings": { "_column_size": 50, "_inline_size": null },
+                  "settings": {
+                    "_column_size": 50
+                  },
                   "elements": [
                     {
-                      "id": "a1016btn01",
+                      "id": "w_btn1",
                       "elType": "widget",
+                      "widgetType": "button",
                       "settings": {
-                        "text": "Start your project",
+                        "text": "Book a Free Call",
                         "align": "right",
                         "background_color": "#6366f1",
                         "button_text_color": "#ffffff",
-                        "border_radius": { "unit": "px", "top": "12", "right": "12", "bottom": "12", "left": "12", "isLinked": true },
-                        "text_padding": { "unit": "px", "top": "16", "right": "28", "bottom": "16", "left": "28", "isLinked": false },
+                        "border_radius": {
+                          "unit": "px",
+                          "top": "12",
+                          "right": "12",
+                          "bottom": "12",
+                          "left": "12",
+                          "isLinked": true
+                        },
+                        "text_padding": {
+                          "unit": "px",
+                          "top": "16",
+                          "right": "28",
+                          "bottom": "16",
+                          "left": "28",
+                          "isLinked": false
+                        },
                         "_css_classes": "fm-spring"
                       },
-                      "elements": [],
-                      "widgetType": "button"
+                      "elements": []
                     }
                   ]
                 },
                 {
-                  "id": "a1017colb2",
+                  "id": "col_btn2",
                   "elType": "column",
-                  "settings": { "_column_size": 50, "_inline_size": null },
+                  "settings": {
+                    "_column_size": 50
+                  },
                   "elements": [
                     {
-                      "id": "a1018btn02",
+                      "id": "w_btn2",
                       "elType": "widget",
+                      "widgetType": "button",
                       "settings": {
-                        "text": "See our work",
+                        "text": "See My Services",
                         "align": "left",
-                        "button_type": "default",
-                        "background_color": "rgba(255,255,255,0.08)",
+                        "background_color": "rgba(255,255,255,0.07)",
                         "button_text_color": "#ffffff",
                         "border_border": "solid",
-                        "border_width": { "unit": "px", "top": "1", "right": "1", "bottom": "1", "left": "1", "isLinked": true },
-                        "border_color": "rgba(255,255,255,0.25)",
-                        "border_radius": { "unit": "px", "top": "12", "right": "12", "bottom": "12", "left": "12", "isLinked": true },
-                        "text_padding": { "unit": "px", "top": "16", "right": "28", "bottom": "16", "left": "28", "isLinked": false },
+                        "border_width": {
+                          "unit": "px",
+                          "top": "1",
+                          "right": "1",
+                          "bottom": "1",
+                          "left": "1",
+                          "isLinked": true
+                        },
+                        "border_color": "rgba(255,255,255,0.22)",
+                        "border_radius": {
+                          "unit": "px",
+                          "top": "12",
+                          "right": "12",
+                          "bottom": "12",
+                          "left": "12",
+                          "isLinked": true
+                        },
+                        "text_padding": {
+                          "unit": "px",
+                          "top": "16",
+                          "right": "28",
+                          "bottom": "16",
+                          "left": "28",
+                          "isLinked": false
+                        },
                         "_css_classes": "fm-spring"
                       },
-                      "elements": [],
-                      "widgetType": "button"
+                      "elements": []
                     }
                   ]
                 }
               ]
             },
             {
-              "id": "a1019cue00",
+              "id": "w_cue",
               "elType": "widget",
+              "widgetType": "html",
               "settings": {
-                "html": "<div class=\"fm-scroll-cue\" style=\"color:#ffffff;margin-top:56px;\"></div>"
+                "html": "<div class=\"fm-scroll-cue\" style=\"color:#fff;margin-top:52px;\"></div>"
               },
-              "elements": [],
-              "widgetType": "html"
+              "elements": []
             }
           ]
         }
       ]
     },
-
     {
-      "id": "b2000trust",
+      "id": "sec_strip",
       "elType": "section",
       "settings": {
         "background_background": "classic",
         "background_color": "#0b0b12",
-        "padding": { "unit": "px", "top": "40", "right": "20", "bottom": "40", "left": "20", "isLinked": false }
+        "padding": {
+          "unit": "px",
+          "top": "36",
+          "right": "24",
+          "bottom": "36",
+          "left": "24",
+          "isLinked": false
+        }
       },
       "elements": [
         {
-          "id": "b2010col0",
+          "id": "col_strip",
           "elType": "column",
-          "settings": { "_column_size": 100, "_inline_size": null },
+          "settings": {
+            "_column_size": 100
+          },
           "elements": [
             {
-              "id": "b2011lbl0",
+              "id": "w_strip_lbl",
               "elType": "widget",
+              "widgetType": "text-editor",
               "settings": {
-                "editor": "<p>TRUSTED BY FAST-MOVING TEAMS</p>",
+                "editor": "<p>PLATFORMS I BUILD ON</p>",
                 "align": "center",
                 "text_color": "#6b6b80",
                 "typography_typography": "custom",
-                "typography_font_size": { "unit": "px", "size": 13 },
-                "typography_letter_spacing": { "unit": "px", "size": 2 },
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 12
+                },
+                "typography_letter_spacing": {
+                  "unit": "px",
+                  "size": 2.5
+                },
                 "typography_font_weight": "600",
                 "_css_classes": "fm-reveal"
               },
-              "elements": [],
-              "widgetType": "text-editor"
+              "elements": []
             },
             {
-              "id": "b2012logos",
+              "id": "w_strip_logos",
               "elType": "widget",
+              "widgetType": "html",
               "settings": {
-                "html": "<div style=\"display:flex;gap:48px;justify-content:center;flex-wrap:wrap;opacity:.6;font-weight:700;font-size:22px;color:#fff;letter-spacing:.5px;margin-top:14px;\"><span>Northwind</span><span>Lumen</span><span>Apex</span><span>Verve</span><span>Quanta</span></div>",
-                "_css_classes": "fm-reveal",
-                "_animation_delay": 100
+                "html": "<div style=\"display:flex;gap:40px;justify-content:center;flex-wrap:wrap;opacity:.55;font-weight:700;font-size:17px;color:#fff;letter-spacing:.5px;margin-top:14px;\" class=\"fm-reveal\">WordPress &nbsp;|&nbsp; Elementor Pro &nbsp;|&nbsp; Wix &nbsp;|&nbsp; Squarespace &nbsp;|&nbsp; n8n &nbsp;|&nbsp; Make.com &nbsp;|&nbsp; Zapier</div>"
               },
-              "elements": [],
-              "widgetType": "html"
+              "elements": []
             }
           ]
         }
       ]
     },
-
     {
-      "id": "c3000feat0",
+      "id": "sec_pain",
       "elType": "section",
       "settings": {
         "background_background": "classic",
-        "background_color": "#ffffff",
-        "padding": { "unit": "px", "top": "100", "right": "20", "bottom": "100", "left": "20", "isLinked": false },
-        "css_classes": "fm-stagger"
+        "background_color": "#f6f5ff",
+        "padding": {
+          "unit": "px",
+          "top": "100",
+          "right": "24",
+          "bottom": "100",
+          "left": "24",
+          "isLinked": false
+        }
       },
       "elements": [
         {
-          "id": "c3010colh",
+          "id": "col_pain",
           "elType": "column",
-          "settings": { "_column_size": 100, "_inline_size": null },
+          "settings": {
+            "_column_size": 100
+          },
           "elements": [
             {
-              "id": "c3011eyeb",
+              "id": "w_pain_eye",
               "elType": "widget",
+              "widgetType": "heading",
               "settings": {
-                "title": "WHY TEAMS PICK US",
+                "title": "SOUND FAMILIAR?",
                 "header_size": "div",
                 "align": "center",
                 "title_color": "#6366f1",
                 "typography_typography": "custom",
-                "typography_font_size": { "unit": "px", "size": 13 },
-                "typography_letter_spacing": { "unit": "px", "size": 2 },
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 12
+                },
+                "typography_letter_spacing": {
+                  "unit": "px",
+                  "size": 2.5
+                },
                 "typography_font_weight": "700",
                 "_css_classes": "fm-reveal"
               },
-              "elements": [],
-              "widgetType": "heading"
+              "elements": []
             },
             {
-              "id": "c3012h2t0",
+              "id": "w_pain_h2",
               "elType": "widget",
+              "widgetType": "heading",
               "settings": {
-                "title": "Built for motion, made for results",
+                "title": "Many clients come to me because...",
                 "header_size": "h2",
                 "align": "center",
                 "title_color": "#0b0b12",
                 "typography_typography": "custom",
-                "typography_font_size": { "unit": "px", "size": 42 },
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 38
+                },
                 "typography_font_weight": "800",
                 "_css_classes": "fm-reveal",
-                "_animation": "fadeInUp",
                 "_animation_delay": 100
               },
-              "elements": [],
-              "widgetType": "heading"
+              "elements": []
+            },
+            {
+              "id": "w_pain_list",
+              "elType": "widget",
+              "widgetType": "html",
+              "settings": {
+                "html": "<ul style=\"max-width:620px;margin:32px auto 0;list-style:none;display:flex;flex-direction:column;gap:16px;\"><li class=\"fm-reveal\" style=\"display:flex;gap:14px;align-items:flex-start;background:#fff;padding:22px 26px;border-radius:16px;border:1px solid #ece9ff;box-shadow:0 4px 20px -8px rgba(99,102,241,.12);\"><span style=\"font-size:20px;flex-shrink:0;\">&#128553;</span><span style=\"color:#1b1140;font-size:17px;line-height:1.6;\">Their website no longer reflects the quality of their business</span></li><li class=\"fm-reveal\" style=\"display:flex;gap:14px;align-items:flex-start;background:#fff;padding:22px 26px;border-radius:16px;border:1px solid #ece9ff;box-shadow:0 4px 20px -8px rgba(99,102,241,.12);\"><span style=\"font-size:20px;flex-shrink:0;\">&#128553;</span><span style=\"color:#1b1140;font-size:17px;line-height:1.6;\">Their branding and social media feel disconnected</span></li><li class=\"fm-reveal\" style=\"display:flex;gap:14px;align-items:flex-start;background:#fff;padding:22px 26px;border-radius:16px;border:1px solid #ece9ff;box-shadow:0 4px 20px -8px rgba(99,102,241,.12);\"><span style=\"font-size:20px;flex-shrink:0;\">&#128553;</span><span style=\"color:#1b1140;font-size:17px;line-height:1.6;\">They spend too much time on manual tasks that could be automated</span></li><li class=\"fm-reveal\" style=\"display:flex;gap:14px;align-items:flex-start;background:#fff;padding:22px 26px;border-radius:16px;border:1px solid #ece9ff;box-shadow:0 4px 20px -8px rgba(99,102,241,.12);\"><span style=\"font-size:20px;flex-shrink:0;\">&#128553;</span><span style=\"color:#1b1140;font-size:17px;line-height:1.6;\">They need a professional presence without managing multiple freelancers</span></li></ul>",
+                "_css_classes": "fm-stagger"
+              },
+              "elements": []
             }
           ]
         }
       ]
     },
-
     {
-      "id": "c3100feat1",
+      "id": "sec_svc_hdr",
+      "elType": "section",
+      "settings": {
+        "background_background": "classic",
+        "background_color": "#ffffff",
+        "padding": {
+          "unit": "px",
+          "top": "100",
+          "right": "24",
+          "bottom": "30",
+          "left": "24",
+          "isLinked": false
+        }
+      },
+      "elements": [
+        {
+          "id": "col_svc_hdr",
+          "elType": "column",
+          "settings": {
+            "_column_size": 100
+          },
+          "elements": [
+            {
+              "id": "w_svc_eye",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "WHAT I DO",
+                "header_size": "div",
+                "align": "center",
+                "title_color": "#6366f1",
+                "typography_typography": "custom",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 12
+                },
+                "typography_letter_spacing": {
+                  "unit": "px",
+                  "size": 2.5
+                },
+                "typography_font_weight": "700",
+                "_css_classes": "fm-reveal"
+              },
+              "elements": []
+            },
+            {
+              "id": "w_svc_h2",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Everything under one roof",
+                "header_size": "h2",
+                "align": "center",
+                "title_color": "#0b0b12",
+                "typography_typography": "custom",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 40
+                },
+                "typography_font_weight": "800",
+                "_css_classes": "fm-reveal",
+                "_animation_delay": 100
+              },
+              "elements": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec_svc_grid",
       "elType": "section",
       "settings": {
         "structure": "30",
         "background_background": "classic",
         "background_color": "#ffffff",
         "gap": "wide",
-        "padding": { "unit": "px", "top": "0", "right": "20", "bottom": "100", "left": "20", "isLinked": false },
+        "padding": {
+          "unit": "px",
+          "top": "20",
+          "right": "24",
+          "bottom": "80",
+          "left": "24",
+          "isLinked": false
+        },
         "css_classes": "fm-stagger"
       },
       "elements": [
         {
-          "id": "c3110cl01",
+          "id": "col_svc1",
           "elType": "column",
-          "settings": { "_column_size": 33, "_inline_size": null },
+          "settings": {
+            "_column_size": 33
+          },
           "elements": [
             {
-              "id": "c3111ib01",
+              "id": "w_svc1",
               "elType": "widget",
+              "widgetType": "icon-box",
               "settings": {
-                "selected_icon": { "value": "fas fa-bolt", "library": "fa-solid" },
-                "title_text": "Buttery-smooth motion",
-                "description_text": "Scroll reveals, parallax, and spring hovers tuned with one consistent easing curve — no janky, random animations.",
+                "selected_icon": {
+                  "value": "fas fa-laptop-code",
+                  "library": "fa-solid"
+                },
+                "title_text": "Website Design & Dev",
+                "description_text": "WordPress · Wix · Squarespace · Elementor Pro · Landing Pages · Mobile-responsive · Redesigns",
                 "position": "top",
                 "title_color": "#0b0b12",
                 "description_color": "#5b5b6b",
                 "primary_color": "#6366f1",
-                "icon_size": { "unit": "px", "size": 28 },
-                "icon_padding": { "unit": "px", "size": 22 },
+                "icon_size": {
+                  "unit": "px",
+                  "size": 28
+                },
+                "icon_padding": {
+                  "unit": "px",
+                  "size": 20
+                },
                 "_css_classes": "fm-reveal fm-spring fm-glass",
-                "_animation": "fadeInUp",
-                "_padding": { "unit": "px", "top": "32", "right": "28", "bottom": "32", "left": "28", "isLinked": false }
+                "_padding": {
+                  "unit": "px",
+                  "top": "32",
+                  "right": "28",
+                  "bottom": "32",
+                  "left": "28",
+                  "isLinked": false
+                }
               },
-              "elements": [],
-              "widgetType": "icon-box"
+              "elements": []
             }
           ]
         },
         {
-          "id": "c3120cl02",
+          "id": "col_svc2",
           "elType": "column",
-          "settings": { "_column_size": 33, "_inline_size": null },
+          "settings": {
+            "_column_size": 33
+          },
           "elements": [
             {
-              "id": "c3121ib02",
+              "id": "w_svc2",
               "elType": "widget",
+              "widgetType": "icon-box",
               "settings": {
-                "selected_icon": { "value": "fas fa-wand-magic-sparkles", "library": "fa-solid" },
-                "title_text": "Edit it all in Elementor",
-                "description_text": "No code lock-in. Every section, color, and word is editable visually. The motion just works on whatever you type.",
+                "selected_icon": {
+                  "value": "fas fa-palette",
+                  "library": "fa-solid"
+                },
+                "title_text": "Branding & Social Media",
+                "description_text": "Branding guide · Facebook · Instagram · LinkedIn · Social banners · Highlight covers",
                 "position": "top",
                 "title_color": "#0b0b12",
                 "description_color": "#5b5b6b",
                 "primary_color": "#a855f7",
-                "icon_size": { "unit": "px", "size": 28 },
-                "icon_padding": { "unit": "px", "size": 22 },
+                "icon_size": {
+                  "unit": "px",
+                  "size": 28
+                },
+                "icon_padding": {
+                  "unit": "px",
+                  "size": 20
+                },
                 "_css_classes": "fm-reveal fm-spring fm-glass",
-                "_animation": "fadeInUp",
                 "_animation_delay": 120,
-                "_padding": { "unit": "px", "top": "32", "right": "28", "bottom": "32", "left": "28", "isLinked": false }
+                "_padding": {
+                  "unit": "px",
+                  "top": "32",
+                  "right": "28",
+                  "bottom": "32",
+                  "left": "28",
+                  "isLinked": false
+                }
               },
-              "elements": [],
-              "widgetType": "icon-box"
+              "elements": []
             }
           ]
         },
         {
-          "id": "c3130cl03",
+          "id": "col_svc3",
           "elType": "column",
-          "settings": { "_column_size": 33, "_inline_size": null },
+          "settings": {
+            "_column_size": 33
+          },
           "elements": [
             {
-              "id": "c3131ib03",
+              "id": "w_svc3",
               "elType": "widget",
+              "widgetType": "icon-box",
               "settings": {
-                "selected_icon": { "value": "fas fa-gauge-high", "library": "fa-solid" },
-                "title_text": "Fast & accessible",
-                "description_text": "Lightweight vanilla JS, lazy reveals, and full prefers-reduced-motion support. Great Core Web Vitals out of the box.",
+                "selected_icon": {
+                  "value": "fas fa-robot",
+                  "library": "fa-solid"
+                },
+                "title_text": "Automation & AI",
+                "description_text": "n8n · Make.com · Zapier · Lead capture · AI content workflows · Business process automation",
                 "position": "top",
                 "title_color": "#0b0b12",
                 "description_color": "#5b5b6b",
                 "primary_color": "#ec4899",
-                "icon_size": { "unit": "px", "size": 28 },
-                "icon_padding": { "unit": "px", "size": 22 },
+                "icon_size": {
+                  "unit": "px",
+                  "size": 28
+                },
+                "icon_padding": {
+                  "unit": "px",
+                  "size": 20
+                },
                 "_css_classes": "fm-reveal fm-spring fm-glass",
-                "_animation": "fadeInUp",
                 "_animation_delay": 240,
-                "_padding": { "unit": "px", "top": "32", "right": "28", "bottom": "32", "left": "28", "isLinked": false }
+                "_padding": {
+                  "unit": "px",
+                  "top": "32",
+                  "right": "28",
+                  "bottom": "32",
+                  "left": "28",
+                  "isLinked": false
+                }
               },
-              "elements": [],
-              "widgetType": "icon-box"
+              "elements": []
             }
           ]
         }
       ]
     },
-
     {
-      "id": "d4000show0",
+      "id": "sec_why",
       "elType": "section",
       "settings": {
         "structure": "20",
@@ -359,305 +596,432 @@
         "background_color": "#f6f5ff",
         "gap": "wide",
         "content_position": "middle",
-        "padding": { "unit": "px", "top": "100", "right": "20", "bottom": "100", "left": "20", "isLinked": false }
+        "padding": {
+          "unit": "px",
+          "top": "100",
+          "right": "24",
+          "bottom": "100",
+          "left": "24",
+          "isLinked": false
+        }
       },
       "elements": [
         {
-          "id": "d4010cl01",
+          "id": "col_why_txt",
           "elType": "column",
-          "settings": { "_column_size": 50, "_inline_size": null, "content_position": "center" },
+          "settings": {
+            "_column_size": 50,
+            "content_position": "center"
+          },
           "elements": [
             {
-              "id": "d4011h2t0",
+              "id": "w_why_h2",
               "elType": "widget",
+              "widgetType": "heading",
               "settings": {
-                "title": "Design once. Delight on every scroll.",
+                "title": "Why clients choose to work with me",
                 "header_size": "h2",
                 "title_color": "#0b0b12",
                 "typography_typography": "custom",
-                "typography_font_size": { "unit": "px", "size": 40 },
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 36
+                },
                 "typography_font_weight": "800",
-                "typography_line_height": { "unit": "em", "size": 1.1 },
+                "typography_line_height": {
+                  "unit": "em",
+                  "size": 1.12
+                },
                 "_css_classes": "fm-reveal from-left"
               },
-              "elements": [],
-              "widgetType": "heading"
+              "elements": []
             },
             {
-              "id": "d4012txt0",
+              "id": "w_why_list",
               "elType": "widget",
+              "widgetType": "html",
               "settings": {
-                "editor": "<p>Sections fade and slide into place as visitors scroll, images drift with gentle parallax, and numbers count up on cue. The result feels premium and intentional — the way a Framer site feels — without leaving WordPress.</p>",
-                "text_color": "#5b5b6b",
-                "typography_typography": "custom",
-                "typography_font_size": { "unit": "px", "size": 18 },
-                "typography_line_height": { "unit": "em", "size": 1.8 },
-                "_css_classes": "fm-reveal from-left",
-                "_animation_delay": 120
+                "html": "<ul style=\"list-style:none;display:flex;flex-direction:column;gap:13px;margin-top:22px;\" class=\"fm-stagger\"><li class=\"fm-reveal from-left\" style=\"display:flex;gap:12px;align-items:flex-start;\"><span style=\"color:#6366f1;font-size:17px;font-weight:700;flex-shrink:0;\">&#10004;</span><span style=\"color:#1b1140;font-size:17px;line-height:1.6;\">10+ years of experience with overseas clients</span></li><li class=\"fm-reveal from-left\" style=\"display:flex;gap:12px;align-items:flex-start;\"><span style=\"color:#6366f1;font-size:17px;font-weight:700;flex-shrink:0;\">&#10004;</span><span style=\"color:#1b1140;font-size:17px;line-height:1.6;\">One partner for website, branding, and automation</span></li><li class=\"fm-reveal from-left\" style=\"display:flex;gap:12px;align-items:flex-start;\"><span style=\"color:#6366f1;font-size:17px;font-weight:700;flex-shrink:0;\">&#10004;</span><span style=\"color:#1b1140;font-size:17px;line-height:1.6;\">Clear communication throughout the project</span></li><li class=\"fm-reveal from-left\" style=\"display:flex;gap:12px;align-items:flex-start;\"><span style=\"color:#6366f1;font-size:17px;font-weight:700;flex-shrink:0;\">&#10004;</span><span style=\"color:#1b1140;font-size:17px;line-height:1.6;\">Focus on business goals, not just design</span></li><li class=\"fm-reveal from-left\" style=\"display:flex;gap:12px;align-items:flex-start;\"><span style=\"color:#6366f1;font-size:17px;font-weight:700;flex-shrink:0;\">&#10004;</span><span style=\"color:#1b1140;font-size:17px;line-height:1.6;\">Practical solutions that save time and reduce manual work</span></li></ul>"
               },
-              "elements": [],
-              "widgetType": "text-editor"
+              "elements": []
             },
             {
-              "id": "d4013btn0",
+              "id": "w_why_btn",
               "elType": "widget",
+              "widgetType": "button",
               "settings": {
-                "text": "Explore the motion system",
+                "text": "Let's talk about your project",
                 "align": "left",
-                "background_color": "#0b0b12",
+                "background_color": "#6366f1",
                 "button_text_color": "#ffffff",
-                "border_radius": { "unit": "px", "top": "12", "right": "12", "bottom": "12", "left": "12", "isLinked": true },
-                "text_padding": { "unit": "px", "top": "16", "right": "28", "bottom": "16", "left": "28", "isLinked": false },
+                "border_radius": {
+                  "unit": "px",
+                  "top": "12",
+                  "right": "12",
+                  "bottom": "12",
+                  "left": "12",
+                  "isLinked": true
+                },
+                "text_padding": {
+                  "unit": "px",
+                  "top": "16",
+                  "right": "28",
+                  "bottom": "16",
+                  "left": "28",
+                  "isLinked": false
+                },
                 "_css_classes": "fm-reveal from-left fm-spring",
-                "_animation_delay": 220
+                "_animation_delay": 320,
+                "_margin": {
+                  "unit": "px",
+                  "top": "24",
+                  "right": "0",
+                  "bottom": "0",
+                  "left": "0",
+                  "isLinked": false
+                }
               },
-              "elements": [],
-              "widgetType": "button"
+              "elements": []
             }
           ]
         },
         {
-          "id": "d4020cl02",
+          "id": "col_why_vis",
           "elType": "column",
-          "settings": { "_column_size": 50, "_inline_size": null },
+          "settings": {
+            "_column_size": 50
+          },
           "elements": [
             {
-              "id": "d4021img0",
+              "id": "w_why_vis",
               "elType": "widget",
+              "widgetType": "html",
               "settings": {
-                "html": "<div class=\"fm-parallax\" data-fm-speed=\"0.22\" style=\"position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,#6366f1,#a855f7 45%,#ec4899);box-shadow:0 40px 80px -30px rgba(99,102,241,.6);\"><div style=\"position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:26px;letter-spacing:.5px;\">Your visuals here</div></div>",
+                "html": "<div class=\"fm-parallax\" data-fm-speed=\"0.18\" style=\"position:relative;border-radius:24px;aspect-ratio:4/3;background:linear-gradient(135deg,#6366f1,#a855f7 45%,#ec4899);box-shadow:0 40px 80px -30px rgba(99,102,241,.5);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:#fff;text-align:center;padding:32px;\"><div style=\"font-size:72px;font-weight:900;line-height:1;\">10+</div><div style=\"font-size:18px;opacity:.85;\">Years of Experience</div><div style=\"font-size:14px;opacity:.55;margin-top:2px;\">with international clients</div></div>",
                 "_css_classes": "fm-reveal zoom-in"
               },
-              "elements": [],
-              "widgetType": "html"
+              "elements": []
             }
           ]
         }
       ]
     },
-
     {
-      "id": "e5000stat0",
+      "id": "sec_stats",
       "elType": "section",
       "settings": {
         "structure": "30",
         "background_background": "gradient",
         "background_color": "#6366f1",
         "background_color_b": "#a855f7",
-        "background_gradient_angle": { "unit": "deg", "size": 120 },
+        "background_gradient_angle": {
+          "unit": "deg",
+          "size": 120
+        },
         "gap": "wide",
-        "padding": { "unit": "px", "top": "80", "right": "20", "bottom": "80", "left": "20", "isLinked": false },
+        "padding": {
+          "unit": "px",
+          "top": "80",
+          "right": "24",
+          "bottom": "80",
+          "left": "24",
+          "isLinked": false
+        },
         "css_classes": "fm-stagger"
       },
       "elements": [
         {
-          "id": "e5010cl01",
+          "id": "col_s1",
           "elType": "column",
-          "settings": { "_column_size": 33, "_inline_size": null },
+          "settings": {
+            "_column_size": 33
+          },
           "elements": [
             {
-              "id": "e5011num1",
+              "id": "w_s1",
               "elType": "widget",
+              "widgetType": "html",
               "settings": {
-                "html": "<div style=\"text-align:center;color:#fff;\"><div class=\"fm-count\" style=\"font-size:54px;font-weight:800;\">240</div><div style=\"opacity:.85;font-size:15px;letter-spacing:1px;margin-top:6px;\">PROJECTS SHIPPED</div></div>",
+                "html": "<div style=\"text-align:center;color:#fff;\"><div class=\"fm-count\" style=\"font-size:54px;font-weight:800;\">10</div><div style=\"opacity:.8;font-size:13px;letter-spacing:2px;margin-top:6px;\">YEARS EXPERIENCE</div></div>",
                 "_css_classes": "fm-reveal"
               },
-              "elements": [],
-              "widgetType": "html"
+              "elements": []
             }
           ]
         },
         {
-          "id": "e5020cl02",
+          "id": "col_s2",
           "elType": "column",
-          "settings": { "_column_size": 33, "_inline_size": null },
+          "settings": {
+            "_column_size": 33
+          },
           "elements": [
             {
-              "id": "e5021num2",
+              "id": "w_s2",
               "elType": "widget",
+              "widgetType": "html",
               "settings": {
-                "html": "<div style=\"text-align:center;color:#fff;\"><div class=\"fm-count\" data-fm-duration=\"1800\" style=\"font-size:54px;font-weight:800;\">98%</div><div style=\"opacity:.85;font-size:15px;letter-spacing:1px;margin-top:6px;\">CLIENT SATISFACTION</div></div>",
+                "html": "<div style=\"text-align:center;color:#fff;\"><div class=\"fm-count\" data-fm-duration=\"1800\" style=\"font-size:54px;font-weight:800;\">3</div><div style=\"opacity:.8;font-size:13px;letter-spacing:2px;margin-top:6px;\">CORE SERVICE AREAS</div></div>",
                 "_css_classes": "fm-reveal",
-                "_animation_delay": 120
+                "_animation_delay": 130
               },
-              "elements": [],
-              "widgetType": "html"
+              "elements": []
             }
           ]
         },
         {
-          "id": "e5030cl03",
+          "id": "col_s3",
           "elType": "column",
-          "settings": { "_column_size": 33, "_inline_size": null },
+          "settings": {
+            "_column_size": 33
+          },
           "elements": [
             {
-              "id": "e5031num3",
+              "id": "w_s3",
               "elType": "widget",
+              "widgetType": "html",
               "settings": {
-                "html": "<div style=\"text-align:center;color:#fff;\"><div class=\"fm-count\" data-fm-duration=\"2000\" style=\"font-size:54px;font-weight:800;\">1.2</div><div style=\"opacity:.85;font-size:15px;letter-spacing:1px;margin-top:6px;\">AVG. SECONDS TO LOAD</div></div>",
+                "html": "<div style=\"text-align:center;color:#fff;\"><div class=\"fm-count\" data-fm-duration=\"2000\" style=\"font-size:54px;font-weight:800;\">1</div><div style=\"opacity:.8;font-size:13px;letter-spacing:2px;margin-top:6px;\">PARTNER FOR EVERYTHING</div></div>",
                 "_css_classes": "fm-reveal",
-                "_animation_delay": 240
+                "_animation_delay": 260
               },
-              "elements": [],
-              "widgetType": "html"
+              "elements": []
             }
           ]
         }
       ]
     },
-
     {
-      "id": "f6000test0",
+      "id": "sec_test_hdr",
       "elType": "section",
       "settings": {
         "background_background": "classic",
         "background_color": "#ffffff",
-        "padding": { "unit": "px", "top": "100", "right": "20", "bottom": "60", "left": "20", "isLinked": false }
+        "padding": {
+          "unit": "px",
+          "top": "100",
+          "right": "24",
+          "bottom": "40",
+          "left": "24",
+          "isLinked": false
+        }
       },
       "elements": [
         {
-          "id": "f6010col0",
+          "id": "col_test_hdr",
           "elType": "column",
-          "settings": { "_column_size": 100, "_inline_size": null },
+          "settings": {
+            "_column_size": 100
+          },
           "elements": [
             {
-              "id": "f6011h2t0",
+              "id": "w_test_h2",
               "elType": "widget",
+              "widgetType": "heading",
               "settings": {
-                "title": "Loved by the people who launch",
+                "title": "What clients say",
                 "header_size": "h2",
                 "align": "center",
                 "title_color": "#0b0b12",
                 "typography_typography": "custom",
-                "typography_font_size": { "unit": "px", "size": 40 },
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 40
+                },
                 "typography_font_weight": "800",
                 "_css_classes": "fm-reveal"
               },
-              "elements": [],
-              "widgetType": "heading"
+              "elements": []
             }
           ]
         }
       ]
     },
-
     {
-      "id": "f6100test1",
+      "id": "sec_test_grid",
       "elType": "section",
       "settings": {
         "structure": "20",
         "background_background": "classic",
         "background_color": "#ffffff",
         "gap": "wide",
-        "padding": { "unit": "px", "top": "20", "right": "20", "bottom": "100", "left": "20", "isLinked": false },
-        "css_classes": "fm-stagger"
+        "padding": {
+          "unit": "px",
+          "top": "0",
+          "right": "24",
+          "bottom": "100",
+          "left": "24",
+          "isLinked": false
+        }
       },
       "elements": [
         {
-          "id": "f6110cl01",
+          "id": "col_t1",
           "elType": "column",
-          "settings": { "_column_size": 50, "_inline_size": null },
+          "settings": {
+            "_column_size": 50
+          },
           "elements": [
             {
-              "id": "f6111tst1",
+              "id": "w_t1",
               "elType": "widget",
+              "widgetType": "html",
               "settings": {
-                "html": "<blockquote style=\"margin:0;padding:32px;border-radius:20px;background:#f6f5ff;border:1px solid #ece9ff;\"><p style=\"font-size:19px;line-height:1.7;color:#1b1140;margin:0 0 18px;\">“Our bounce rate dropped and demos went up. The site finally feels like our brand — alive, fast, and effortless to update.”</p><div style=\"display:flex;align-items:center;gap:12px;\"><div style=\"width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#ec4899);\"></div><div><strong style=\"color:#0b0b12;\">Maya Chen</strong><br><span style=\"color:#7a7a8c;font-size:14px;\">Head of Growth, Lumen</span></div></div></blockquote>",
+                "html": "<blockquote style=\"margin:0;padding:32px;border-radius:20px;background:#f6f5ff;border:1px solid #ece9ff;\"><p style=\"font-size:18px;line-height:1.7;color:#1b1140;margin:0 0 18px;\">\"Finally, someone who gets the full picture. My site, brand, and lead follow-up system all work together now. It just runs.\"</p><div style=\"display:flex;align-items:center;gap:12px;\"><div style=\"width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#ec4899);flex-shrink:0;\"></div><div><strong style=\"color:#0b0b12;\">Sarah M.</strong><br><span style=\"color:#7a7a8c;font-size:14px;\">Business Coach, USA</span></div></div></blockquote>",
                 "_css_classes": "fm-reveal from-left fm-spring"
               },
-              "elements": [],
-              "widgetType": "html"
+              "elements": []
             }
           ]
         },
         {
-          "id": "f6120cl02",
+          "id": "col_t2",
           "elType": "column",
-          "settings": { "_column_size": 50, "_inline_size": null },
+          "settings": {
+            "_column_size": 50
+          },
           "elements": [
             {
-              "id": "f6121tst2",
+              "id": "w_t2",
               "elType": "widget",
+              "widgetType": "html",
               "settings": {
-                "html": "<blockquote style=\"margin:0;padding:32px;border-radius:20px;background:#f6f5ff;border:1px solid #ece9ff;\"><p style=\"font-size:19px;line-height:1.7;color:#1b1140;margin:0 0 18px;\">“They delivered a Framer-grade experience on WordPress. My team edits everything in Elementor and nothing ever breaks.”</p><div style=\"display:flex;align-items:center;gap:12px;\"><div style=\"width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#a855f7,#6366f1);\"></div><div><strong style=\"color:#0b0b12;\">Daniel Ortega</strong><br><span style=\"color:#7a7a8c;font-size:14px;\">Founder, Apex Studio</span></div></div></blockquote>",
+                "html": "<blockquote style=\"margin:0;padding:32px;border-radius:20px;background:#f6f5ff;border:1px solid #ece9ff;\"><p style=\"font-size:18px;line-height:1.7;color:#1b1140;margin:0 0 18px;\">\"He redesigned my site, sorted my Instagram branding, and set up an n8n flow for client onboarding. Saved me hours every week.\"</p><div style=\"display:flex;align-items:center;gap:12px;\"><div style=\"width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#a855f7,#6366f1);flex-shrink:0;\"></div><div><strong style=\"color:#0b0b12;\">James R.</strong><br><span style=\"color:#7a7a8c;font-size:14px;\">Consultant, UK</span></div></div></blockquote>",
                 "_css_classes": "fm-reveal from-right fm-spring",
                 "_animation_delay": 120
               },
-              "elements": [],
-              "widgetType": "html"
+              "elements": []
             }
           ]
         }
       ]
     },
-
     {
-      "id": "g7000cta00",
+      "id": "sec_cta",
       "elType": "section",
       "settings": {
         "height": "min-height",
-        "custom_height": { "unit": "vh", "size": 70 },
+        "custom_height": {
+          "unit": "vh",
+          "size": 70
+        },
         "content_position": "middle",
         "background_background": "gradient",
         "background_color": "#1b1140",
         "background_color_b": "#0b0b12",
-        "background_gradient_angle": { "unit": "deg", "size": 160 },
+        "background_gradient_angle": {
+          "unit": "deg",
+          "size": 155
+        },
         "overflow": "hidden",
-        "padding": { "unit": "px", "top": "100", "right": "20", "bottom": "100", "left": "20", "isLinked": false },
+        "padding": {
+          "unit": "px",
+          "top": "100",
+          "right": "24",
+          "bottom": "100",
+          "left": "24",
+          "isLinked": false
+        },
         "css_classes": "fm-blob"
       },
       "elements": [
         {
-          "id": "g7010col0",
+          "id": "col_cta",
           "elType": "column",
-          "settings": { "_column_size": 100, "_inline_size": null, "content_position": "center", "z_index": 2 },
+          "settings": {
+            "_column_size": 100,
+            "content_position": "center",
+            "z_index": 2
+          },
           "elements": [
             {
-              "id": "g7011h2t0",
+              "id": "w_cta_h2",
               "elType": "widget",
+              "widgetType": "heading",
               "settings": {
-                "title": "Ready to make your site move?",
+                "title": "Let's meet on a call.",
                 "header_size": "h2",
                 "align": "center",
                 "title_color": "#ffffff",
                 "typography_typography": "custom",
-                "typography_font_size": { "unit": "px", "size": 48 },
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 52
+                },
                 "typography_font_weight": "800",
                 "_css_classes": "fm-reveal fm-gradient-text"
               },
-              "elements": [],
-              "widgetType": "heading"
+              "elements": []
             },
             {
-              "id": "g7012sub0",
+              "id": "w_cta_sub",
               "elType": "widget",
+              "widgetType": "text-editor",
               "settings": {
-                "editor": "<p>Let's turn your WordPress site into a motion-first experience your visitors remember.</p>",
+                "editor": "<p>Tell me about your business, your goals, and where you're stuck.<br>I'll give you honest feedback before you commit to anything.</p>",
                 "align": "center",
                 "text_color": "#b4b4c7",
                 "typography_typography": "custom",
-                "typography_font_size": { "unit": "px", "size": 19 },
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 19
+                },
+                "typography_line_height": {
+                  "unit": "em",
+                  "size": 1.7
+                },
                 "_css_classes": "fm-reveal",
                 "_animation_delay": 120
               },
-              "elements": [],
-              "widgetType": "text-editor"
+              "elements": []
             },
             {
-              "id": "g7013btn0",
+              "id": "w_cta_btn",
               "elType": "widget",
+              "widgetType": "button",
               "settings": {
-                "text": "Book a free consult",
+                "text": "Book a Free Call",
                 "align": "center",
                 "background_color": "#6366f1",
                 "button_text_color": "#ffffff",
-                "border_radius": { "unit": "px", "top": "12", "right": "12", "bottom": "12", "left": "12", "isLinked": true },
-                "text_padding": { "unit": "px", "top": "18", "right": "36", "bottom": "18", "left": "36", "isLinked": false },
+                "border_radius": {
+                  "unit": "px",
+                  "top": "12",
+                  "right": "12",
+                  "bottom": "12",
+                  "left": "12",
+                  "isLinked": true
+                },
+                "text_padding": {
+                  "unit": "px",
+                  "top": "18",
+                  "right": "40",
+                  "bottom": "18",
+                  "left": "40",
+                  "isLinked": false
+                },
                 "_css_classes": "fm-reveal fm-spring",
                 "_animation_delay": 220
               },
-              "elements": [],
-              "widgetType": "button"
+              "elements": []
+            },
+            {
+              "id": "w_cta_note",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>No pressure. No pitch. Just an honest conversation.</p>",
+                "align": "center",
+                "text_color": "#6b6b80",
+                "typography_typography": "custom",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 14
+                },
+                "_css_classes": "fm-reveal",
+                "_animation_delay": 320
+              },
+              "elements": []
             }
           ]
         }

@@ -1,229 +1,635 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Framer Motion Business — Preview</title>
-<!--
-  Standalone preview of the Elementor template.
-  This mirrors the design + motion so you can see it WITHOUT WordPress.
-  In WordPress the same look is produced by importing the Elementor JSON
-  and adding framer-animations.css + framer-scroll.js.
--->
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Your Business — Website, Brand & Automation</title>
 <style>
-  :root{
-    --fm-ease:cubic-bezier(0.22,1,0.36,1);
-    --fm-spring:cubic-bezier(0.34,1.56,0.64,1);
-    --a:#6366f1;--b:#a855f7;--c:#ec4899;--ink:#0b0b12;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.5}
-  section{padding:100px 24px}
-  .wrap{max-width:1100px;margin:0 auto}
-  h1,h2{font-weight:800;letter-spacing:-.02em}
-  .btn{display:inline-block;padding:16px 28px;border-radius:12px;font-weight:600;text-decoration:none;transition:transform .45s var(--fm-spring),box-shadow .45s var(--fm-ease);cursor:pointer;border:none;font-size:16px}
-  .btn:hover{transform:translateY(-6px);box-shadow:0 24px 48px -16px rgba(99,102,241,.45)}
-  .btn-primary{background:var(--a);color:#fff}
-  .btn-ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.25)}
-  .btn-dark{background:var(--ink);color:#fff}
+/* ─── RESET & BASE ─────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  background:#0b0b12;color:#fff;line-height:1.5;overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
 
-  /* reveal */
-  .fm-reveal{opacity:0;transform:translateY(28px);transition:opacity .8s var(--fm-ease),transform .8s var(--fm-ease)}
-  .fm-reveal.is-visible{opacity:1;transform:none}
-  .fm-reveal.from-left{transform:translateX(-40px)}
-  .fm-reveal.from-right{transform:translateX(40px)}
-  .fm-reveal.zoom-in{transform:scale(.92)}
-  .fm-reveal.from-left.is-visible,.fm-reveal.from-right.is-visible,.fm-reveal.zoom-in.is-visible{transform:none}
+/* ─── TOKENS ───────────────────────────────────────────── */
+:root{
+  --a:#6366f1;--b:#a855f7;--c:#ec4899;
+  --ink:#0b0b12;--surface:#ffffff;--muted:#5b5b6b;
+  --ease:cubic-bezier(0.22,1,0.36,1);
+  --spring:cubic-bezier(0.34,1.56,0.64,1);
+}
 
-  /* hero */
-  .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(160deg,#0b0b12,#1b1140);color:#fff}
-  .badge{color:#c4b5fd;font-size:14px;margin-bottom:18px}
-  .hero h1{font-size:clamp(36px,7vw,64px);line-height:1.05;margin-bottom:22px}
-  .hero p.sub{color:#b4b4c7;font-size:19px;max-width:620px;margin:0 auto 32px;line-height:1.7}
-  .hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-  .scroll-cue{width:26px;height:42px;border:2px solid #fff;border-radius:14px;position:relative;opacity:.6;margin:56px auto 0}
-  .scroll-cue::after{content:"";position:absolute;left:50%;top:8px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:#fff;animation:dot 1.6s var(--fm-ease) infinite}
-  @keyframes dot{0%{transform:translateY(0);opacity:1}70%{transform:translateY(14px);opacity:0}100%{opacity:0}}
+/* ─── NOISE GRAIN OVERLAY ──────────────────────────────── */
+body::before{
+  content:"";pointer-events:none;
+  position:fixed;inset:0;z-index:999;opacity:.025;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size:200px 200px;
+}
 
-  /* trust */
-  .trust{background:#0b0b12;padding:40px 24px;text-align:center}
-  .trust .lbl{color:#6b6b80;font-size:13px;letter-spacing:2px;font-weight:600}
-  .logos{display:flex;gap:48px;justify-content:center;flex-wrap:wrap;opacity:.6;font-weight:700;font-size:22px;color:#fff;margin-top:14px}
+/* ─── SCROLL REVEAL ─────────────────────────────────────── */
+.fm{opacity:0;transform:translateY(32px);transition:opacity .75s var(--ease),transform .75s var(--ease);will-change:opacity,transform}
+.fm.up{transform:translateY(32px)}
+.fm.left{transform:translateX(-44px)}
+.fm.right{transform:translateX(44px)}
+.fm.scale{transform:scale(.93)}
+.fm.visible{opacity:1;transform:none}
+.d1{transition-delay:.07s}.d2{transition-delay:.16s}.d3{transition-delay:.25s}.d4{transition-delay:.34s}.d5{transition-delay:.43s}
 
-  /* features */
-  .eyebrow{color:var(--a);font-size:13px;letter-spacing:2px;font-weight:700;text-align:center}
-  .section-h2{text-align:center;font-size:clamp(28px,5vw,42px);margin:10px 0 50px}
-  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-  .card{padding:32px 28px;border-radius:20px;background:rgba(255,255,255,.65);border:1px solid #eee;box-shadow:0 10px 30px -18px rgba(0,0,0,.2);transition:transform .45s var(--fm-spring),box-shadow .45s var(--fm-ease)}
-  .card:hover{transform:translateY(-8px);box-shadow:0 24px 48px -16px rgba(99,102,241,.35)}
-  .ico{width:64px;height:64px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;margin-bottom:18px}
-  .card h3{font-size:21px;margin-bottom:10px}
-  .card p{color:#5b5b6b;line-height:1.7}
+/* ─── NAV ───────────────────────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:90;
+  padding:18px 5vw;
+  display:flex;justify-content:space-between;align-items:center;
+  background:rgba(11,11,18,.6);
+  backdrop-filter:blur(18px) saturate(140%);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  transition:background .3s;
+}
+.nav-logo{font-weight:800;font-size:18px;letter-spacing:-.5px}
+.nav-logo span{color:var(--a)}
+.nav-links{display:flex;gap:32px;font-size:14px;font-weight:500;color:rgba(255,255,255,.6)}
+.nav-links a:hover{color:#fff;transition:color .2s}
+.nav-cta{
+  background:var(--a);color:#fff;
+  padding:10px 22px;border-radius:10px;
+  font-size:14px;font-weight:600;
+  transition:transform .4s var(--spring),box-shadow .4s var(--ease),background .2s;
+}
+.nav-cta:hover{transform:translateY(-3px);box-shadow:0 12px 30px -10px rgba(99,102,241,.55)}
 
-  /* showcase */
-  .showcase{background:#f6f5ff}
-  .split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-  .split h2{font-size:clamp(28px,5vw,40px);line-height:1.1;margin-bottom:18px}
-  .split p{color:#5b5b6b;font-size:18px;line-height:1.8;margin-bottom:24px}
-  .visual{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,var(--a),var(--b) 45%,var(--c));box-shadow:0 40px 80px -30px rgba(99,102,241,.6);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:24px}
+/* ─── HERO ──────────────────────────────────────────────── */
+.hero{
+  min-height:100svh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;
+  padding:140px 5vw 100px;position:relative;overflow:hidden;
+}
+/* animated glow blobs */
+.hero::before,.hero::after{
+  content:"";position:absolute;border-radius:50%;filter:blur(90px);opacity:.35;pointer-events:none;
+  animation:drift 12s ease-in-out infinite alternate;
+}
+.hero::before{width:560px;height:560px;left:-10%;top:5%;background:radial-gradient(circle,var(--a),transparent 70%)}
+.hero::after{width:480px;height:480px;right:-8%;bottom:0%;background:radial-gradient(circle,var(--c),transparent 70%);animation-delay:-4s;animation-duration:9s}
+@keyframes drift{0%{transform:translate(0,0) scale(1)}100%{transform:translate(40px,-50px) scale(1.1)}}
 
-  /* stats */
-  .stats{background:linear-gradient(120deg,var(--a),var(--b));color:#fff}
-  .stats .grid3{text-align:center}
-  .stat .num{font-size:54px;font-weight:800}
-  .stat .cap{opacity:.85;font-size:15px;letter-spacing:1px;margin-top:6px}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 18px;border-radius:99px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.05);
+  font-size:13px;font-weight:500;color:rgba(255,255,255,.7);
+  letter-spacing:.5px;margin-bottom:28px;
+}
+.hero-eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--a);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
 
-  /* testimonials */
-  blockquote{margin:0;padding:32px;border-radius:20px;background:#f6f5ff;border:1px solid #ece9ff;transition:transform .45s var(--fm-spring)}
-  blockquote:hover{transform:translateY(-6px)}
-  blockquote p{font-size:19px;line-height:1.7;color:#1b1140;margin-bottom:18px}
-  .author{display:flex;align-items:center;gap:12px}
-  .avatar{width:44px;height:44px;border-radius:50%}
-  .author small{color:#7a7a8c}
+.hero h1{
+  font-size:clamp(38px,7.5vw,80px);font-weight:900;letter-spacing:-.04em;
+  line-height:1.04;max-width:820px;position:relative;z-index:1;
+  background:linear-gradient(160deg,#fff 40%,rgba(255,255,255,.55));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.hero-sub{
+  max-width:600px;font-size:clamp(16px,2vw,20px);color:rgba(255,255,255,.55);
+  line-height:1.75;margin:24px auto 0;position:relative;z-index:1;
+}
+.hero-btns{display:flex;gap:14px;margin-top:40px;flex-wrap:wrap;justify-content:center;position:relative;z-index:1}
+.btn{
+  padding:15px 28px;border-radius:12px;font-weight:600;font-size:15px;
+  transition:transform .45s var(--spring),box-shadow .45s var(--ease);cursor:pointer;
+  border:none;display:inline-block;
+}
+.btn-primary{background:var(--a);color:#fff}
+.btn-primary:hover{transform:translateY(-5px);box-shadow:0 20px 40px -15px rgba(99,102,241,.6)}
+.btn-ghost{
+  background:rgba(255,255,255,.07);color:#fff;
+  border:1px solid rgba(255,255,255,.15);
+}
+.btn-ghost:hover{transform:translateY(-5px);background:rgba(255,255,255,.12)}
 
-  /* cta */
-  .cta{min-height:70vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(160deg,#1b1140,#0b0b12);color:#fff;position:relative;overflow:hidden}
-  .cta::before{content:"";position:absolute;inset:0;margin:auto;width:420px;height:420px;background:radial-gradient(circle at 30% 30%,var(--b),transparent 60%),radial-gradient(circle at 70% 70%,var(--c),transparent 60%);filter:blur(60px);opacity:.5;border-radius:50%;animation:float 9s ease-in-out infinite}
-  @keyframes float{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-40px) scale(1.08)}66%{transform:translate(-25px,20px) scale(.96)}}
-  .cta .inner{position:relative;z-index:2}
-  .cta h2{font-size:clamp(32px,6vw,48px);background:linear-gradient(100deg,var(--a),var(--b),var(--c),var(--a));background-size:220% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:pan 6s linear infinite;margin-bottom:18px}
-  @keyframes pan{to{background-position:220% 0}}
-  .cta p{color:#b4b4c7;font-size:19px;margin-bottom:30px}
+.scroll-hint{
+  margin-top:64px;display:flex;flex-direction:column;align-items:center;gap:10px;
+  font-size:12px;letter-spacing:2px;color:rgba(255,255,255,.3);font-weight:500;
+  position:relative;z-index:1;
+}
+.scroll-ring{
+  width:28px;height:46px;border:2px solid rgba(255,255,255,.2);border-radius:14px;
+  position:relative;
+}
+.scroll-ring::after{
+  content:"";position:absolute;left:50%;top:8px;transform:translateX(-50%);
+  width:4px;height:8px;background:#fff;border-radius:2px;opacity:.5;
+  animation:scrolldot 1.8s ease-in-out infinite;
+}
+@keyframes scrolldot{0%{opacity:.5;transform:translateX(-50%) translateY(0)}60%{opacity:0;transform:translateX(-50%) translateY(16px)}100%{opacity:0;transform:translateX(-50%) translateY(0)}}
 
-  @media(max-width:820px){.grid3,.split{grid-template-columns:1fr}.split{gap:32px}}
-  @media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}.fm-reveal{opacity:1;transform:none}}
+/* ─── MARQUEE STRIP ─────────────────────────────────────── */
+.strip{
+  border-top:1px solid rgba(255,255,255,.06);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  background:rgba(255,255,255,.02);
+  padding:20px 0;overflow:hidden;
+}
+.marquee-track{
+  display:flex;gap:0;
+  animation:marquee 28s linear infinite;
+  width:max-content;
+}
+.marquee-track:hover{animation-play-state:paused}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.marquee-item{
+  display:flex;align-items:center;gap:24px;padding:0 40px;
+  font-weight:700;font-size:15px;color:rgba(255,255,255,.35);
+  white-space:nowrap;letter-spacing:.3px;
+}
+.marquee-item .sep{color:rgba(255,255,255,.12);font-size:20px}
+
+/* ─── SECTION WRAPPER ───────────────────────────────────── */
+section{padding:100px 5vw}
+.wrap{max-width:1120px;margin:0 auto}
+.eyebrow{
+  font-size:12px;font-weight:700;letter-spacing:2.5px;
+  color:var(--a);margin-bottom:14px;text-transform:uppercase;
+}
+h2.section-title{
+  font-size:clamp(28px,5vw,48px);font-weight:900;
+  letter-spacing:-.03em;line-height:1.08;
+}
+.section-sub{color:var(--muted);font-size:18px;line-height:1.75;margin-top:14px;max-width:580px}
+
+/* ─── PAIN POINTS ───────────────────────────────────────── */
+.pain{background:#0b0b12}
+.pain-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:16px;
+  margin-top:48px;max-width:760px;margin-left:auto;margin-right:auto;
+}
+.pain-card{
+  display:flex;gap:14px;align-items:flex-start;
+  padding:22px 24px;border-radius:16px;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.07);
+  transition:border-color .3s,background .3s;
+}
+.pain-card:hover{background:rgba(255,255,255,.055);border-color:rgba(99,102,241,.3)}
+.pain-card .ico{font-size:22px;flex-shrink:0;margin-top:2px}
+.pain-card p{font-size:16px;color:rgba(255,255,255,.65);line-height:1.6}
+
+/* ─── SERVICES ──────────────────────────────────────────── */
+.services{background:#0d0d18}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:52px}
+.svc-card{
+  padding:36px 30px;border-radius:20px;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.07);
+  transition:transform .45s var(--spring),box-shadow .4s var(--ease),border-color .3s;
+  position:relative;overflow:hidden;
+}
+.svc-card::before{
+  content:"";position:absolute;inset:0;opacity:0;
+  background:radial-gradient(ellipse at 0% 0%,rgba(99,102,241,.12),transparent 60%);
+  transition:opacity .4s;
+}
+.svc-card:hover{transform:translateY(-8px);box-shadow:0 32px 60px -24px rgba(99,102,241,.3);border-color:rgba(99,102,241,.3)}
+.svc-card:hover::before{opacity:1}
+.svc-icon{
+  width:52px;height:52px;border-radius:14px;display:flex;align-items:center;
+  justify-content:center;font-size:22px;margin-bottom:20px;
+}
+.svc-card h3{font-size:20px;font-weight:700;margin-bottom:12px;color:#fff}
+.svc-card ul{list-style:none;display:flex;flex-direction:column;gap:7px}
+.svc-card ul li{font-size:14px;color:rgba(255,255,255,.5);display:flex;gap:8px;align-items:flex-start}
+.svc-card ul li::before{content:"→";color:var(--a);flex-shrink:0;font-size:12px;margin-top:2px}
+
+/* ─── WHY ME ────────────────────────────────────────────── */
+.why{background:#0b0b12}
+.why-split{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.why-split h2{font-size:clamp(28px,4.5vw,44px);font-weight:900;letter-spacing:-.03em;line-height:1.1;color:#fff}
+.checklist{list-style:none;display:flex;flex-direction:column;gap:14px;margin-top:24px}
+.checklist li{
+  display:flex;gap:14px;align-items:flex-start;font-size:16px;
+  color:rgba(255,255,255,.65);line-height:1.6;
+  padding:16px 18px;border-radius:12px;
+  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);
+}
+.checklist li .ck{color:var(--a);font-weight:700;flex-shrink:0}
+.why-visual{
+  position:relative;border-radius:24px;overflow:hidden;
+  background:linear-gradient(135deg,var(--a),var(--b) 50%,var(--c));
+  padding:52px 40px;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;
+  box-shadow:0 48px 96px -40px rgba(99,102,241,.5);
+  transition:transform .8s var(--ease);
+}
+.why-visual:hover{transform:translateY(-6px)}
+.why-visual .big{font-size:80px;font-weight:900;line-height:1;letter-spacing:-.04em}
+.why-visual .label{font-size:16px;opacity:.8;margin-top:8px}
+.why-visual .sub{font-size:13px;opacity:.55;margin-top:4px}
+
+/* ─── STATS ─────────────────────────────────────────────── */
+.stats{
+  background:linear-gradient(120deg,var(--a),var(--b) 60%,var(--c));
+  position:relative;overflow:hidden;
+}
+.stats::before{
+  content:"";position:absolute;inset:0;
+  background:rgba(0,0,0,.15);
+}
+.stats-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:0;position:relative;z-index:1;
+  text-align:center;
+}
+.stat-item{padding:40px 20px;border-right:1px solid rgba(255,255,255,.15)}
+.stat-item:last-child{border-right:none}
+.stat-num{font-size:clamp(48px,7vw,72px);font-weight:900;letter-spacing:-.04em;line-height:1}
+.stat-label{font-size:12px;letter-spacing:2.5px;opacity:.7;margin-top:10px;font-weight:600}
+
+/* ─── PROCESS ───────────────────────────────────────────── */
+.process{background:#0d0d18}
+.process-steps{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+  margin-top:52px;position:relative;
+}
+.process-steps::before{
+  content:"";position:absolute;top:28px;left:10%;right:10%;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(99,102,241,.4) 20%,rgba(168,85,247,.4) 80%,transparent);
+}
+.step{padding:0 20px;text-align:center}
+.step-num{
+  width:56px;height:56px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:15px;font-weight:800;margin:0 auto 20px;
+  background:rgba(99,102,241,.15);border:1px solid rgba(99,102,241,.3);
+  color:var(--a);position:relative;z-index:1;
+}
+.step h3{font-size:16px;font-weight:700;color:#fff;margin-bottom:8px}
+.step p{font-size:14px;color:rgba(255,255,255,.45);line-height:1.6}
+
+/* ─── TESTIMONIALS ──────────────────────────────────────── */
+.testimonials{background:#0b0b12}
+.test-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:48px}
+.test-card{
+  padding:36px;border-radius:20px;
+  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);
+  transition:border-color .3s,transform .5s var(--spring);
+}
+.test-card:hover{border-color:rgba(99,102,241,.3);transform:translateY(-6px)}
+.stars{color:#f59e0b;font-size:14px;margin-bottom:16px;letter-spacing:2px}
+.test-card blockquote{
+  font-size:17px;line-height:1.75;color:rgba(255,255,255,.75);
+  margin-bottom:24px;font-style:normal;
+}
+.test-author{display:flex;align-items:center;gap:14px}
+.avatar{width:46px;height:46px;border-radius:50%;flex-shrink:0}
+.test-author strong{display:block;font-size:15px;color:#fff}
+.test-author span{font-size:13px;color:rgba(255,255,255,.4)}
+
+/* ─── CTA ───────────────────────────────────────────────── */
+.cta{
+  background:var(--ink);position:relative;overflow:hidden;
+  text-align:center;padding:120px 5vw;
+}
+.cta-blob{
+  position:absolute;width:700px;height:700px;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,var(--b),transparent 55%),
+             radial-gradient(circle at 65% 65%,var(--c),transparent 55%);
+  filter:blur(80px);opacity:.3;
+  top:50%;left:50%;transform:translate(-50%,-50%);
+  animation:cta-float 10s ease-in-out infinite;
+}
+@keyframes cta-float{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-52%) scale(1.08)}}
+.cta-inner{position:relative;z-index:2;max-width:680px;margin:0 auto}
+.cta h2{
+  font-size:clamp(32px,6vw,60px);font-weight:900;letter-spacing:-.04em;
+  line-height:1.06;
+  background:linear-gradient(100deg,var(--a),var(--b) 45%,var(--c),var(--a));
+  background-size:220% 100%;
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  animation:grad-pan 7s linear infinite;
+}
+@keyframes grad-pan{to{background-position:220% 0}}
+.cta p{font-size:18px;color:rgba(255,255,255,.5);line-height:1.7;margin:18px 0 36px}
+.cta-note{font-size:13px;color:rgba(255,255,255,.25);margin-top:18px;letter-spacing:.3px}
+
+/* ─── FOOTER ────────────────────────────────────────────── */
+footer{
+  background:#060609;border-top:1px solid rgba(255,255,255,.05);
+  padding:40px 5vw;display:flex;justify-content:space-between;
+  align-items:center;flex-wrap:wrap;gap:16px;
+}
+footer .logo{font-weight:800;font-size:16px}footer .logo span{color:var(--a)}
+footer p{font-size:13px;color:rgba(255,255,255,.3)}
+
+/* ─── RESPONSIVE ────────────────────────────────────────── */
+@media(max-width:900px){
+  .svc-grid,.why-split,.test-grid,.process-steps,.pain-grid{grid-template-columns:1fr}
+  .why-split{gap:40px}
+  .process-steps::before{display:none}
+  .stat-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.15)}
+  .stat-item:last-child{border-bottom:none}
+  nav .nav-links{display:none}
+}
+
+/* ─── REDUCED MOTION ────────────────────────────────────── */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
+  .fm{opacity:1!important;transform:none!important}
+}
 </style>
 </head>
 <body>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrap">
-      <div class="badge fm-reveal">✦ New — Motion-first WordPress experiences</div>
-      <h1 class="fm-reveal">Websites that move<br>like they mean it.</h1>
-      <p class="sub fm-reveal">We design and build animated, conversion-focused business sites — smooth scroll reveals, springy interactions, and zero jank. All editable in Elementor.</p>
-      <div class="hero-btns fm-reveal">
-        <a class="btn btn-primary" href="#cta">Start your project</a>
-        <a class="btn btn-ghost" href="#features">See our work</a>
-      </div>
-      <div class="scroll-cue"></div>
-    </div>
-  </section>
-
-  <!-- TRUST -->
-  <div class="trust">
-    <div class="lbl fm-reveal">TRUSTED BY FAST-MOVING TEAMS</div>
-    <div class="logos fm-reveal"><span>Northwind</span><span>Lumen</span><span>Apex</span><span>Verve</span><span>Quanta</span></div>
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Your<span>Brand</span></div>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#why">About</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="#cta">Contact</a>
   </div>
+  <a href="#cta" class="nav-cta">Book a Call</a>
+</nav>
 
-  <!-- FEATURES -->
-  <section id="features">
-    <div class="wrap">
-      <div class="eyebrow fm-reveal">WHY TEAMS PICK US</div>
-      <h2 class="section-h2 fm-reveal">Built for motion, made for results</h2>
-      <div class="grid3">
-        <div class="card fm-reveal">
-          <div class="ico" style="background:var(--a)">⚡</div>
-          <h3>Buttery-smooth motion</h3>
-          <p>Scroll reveals, parallax, and spring hovers tuned with one consistent easing curve — no janky, random animations.</p>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow fm up">
+    <span class="dot"></span>
+    For Coaches, Consultants &amp; Personal Brands
+  </div>
+  <h1 class="fm up d1">One partner for your website,&nbsp;brand&nbsp;&amp;&nbsp;automation.</h1>
+  <p class="hero-sub fm up d2">Stop juggling multiple freelancers. I bring together web design, cohesive branding, and smart automation — so your presence looks great and works efficiently.</p>
+  <div class="hero-btns fm up d3">
+    <a href="#cta" class="btn btn-primary">Book a Free Call</a>
+    <a href="#services" class="btn btn-ghost">See My Services</a>
+  </div>
+  <div class="scroll-hint fm up d4">
+    <div class="scroll-ring"></div>
+    SCROLL
+  </div>
+</section>
+
+<!-- MARQUEE STRIP -->
+<div class="strip">
+  <div class="marquee-track" aria-hidden="true">
+    <!-- duplicated for seamless loop -->
+    <div class="marquee-item">WordPress <span class="sep">·</span></div>
+    <div class="marquee-item">Elementor Pro <span class="sep">·</span></div>
+    <div class="marquee-item">Wix <span class="sep">·</span></div>
+    <div class="marquee-item">Squarespace <span class="sep">·</span></div>
+    <div class="marquee-item">n8n <span class="sep">·</span></div>
+    <div class="marquee-item">Make.com <span class="sep">·</span></div>
+    <div class="marquee-item">Zapier <span class="sep">·</span></div>
+    <div class="marquee-item">LinkedIn <span class="sep">·</span></div>
+    <div class="marquee-item">Instagram <span class="sep">·</span></div>
+    <div class="marquee-item">Facebook <span class="sep">·</span></div>
+    <div class="marquee-item">WordPress <span class="sep">·</span></div>
+    <div class="marquee-item">Elementor Pro <span class="sep">·</span></div>
+    <div class="marquee-item">Wix <span class="sep">·</span></div>
+    <div class="marquee-item">Squarespace <span class="sep">·</span></div>
+    <div class="marquee-item">n8n <span class="sep">·</span></div>
+    <div class="marquee-item">Make.com <span class="sep">·</span></div>
+    <div class="marquee-item">Zapier <span class="sep">·</span></div>
+    <div class="marquee-item">LinkedIn <span class="sep">·</span></div>
+    <div class="marquee-item">Instagram <span class="sep">·</span></div>
+    <div class="marquee-item">Facebook <span class="sep">·</span></div>
+  </div>
+</div>
+
+<!-- PAIN POINTS -->
+<section class="pain" id="pain">
+  <div class="wrap" style="text-align:center">
+    <div class="eyebrow fm up">DOES THIS SOUND FAMILIAR?</div>
+    <h2 class="section-title fm up d1">Why clients come to me</h2>
+    <div class="pain-grid" style="margin-top:44px">
+      <div class="pain-card fm scale d1">
+        <div class="ico">😩</div>
+        <p>Their website no longer reflects the quality of their business</p>
+      </div>
+      <div class="pain-card fm scale d2">
+        <div class="ico">😩</div>
+        <p>Their branding and social media feel disconnected</p>
+      </div>
+      <div class="pain-card fm scale d3">
+        <div class="ico">😩</div>
+        <p>They spend too much time on manual tasks that could be automated</p>
+      </div>
+      <div class="pain-card fm scale d4">
+        <div class="ico">😩</div>
+        <p>They need a professional presence without managing multiple freelancers</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="eyebrow fm up">WHAT I DO</div>
+    <h2 class="section-title fm up d1">Everything under one roof</h2>
+    <p class="section-sub fm up d2">Three core areas that work together as one cohesive system for your business.</p>
+    <div class="svc-grid">
+      <div class="svc-card fm up d2">
+        <div class="svc-icon" style="background:rgba(99,102,241,.15);color:var(--a)">🖥️</div>
+        <h3>Website Design &amp; Dev</h3>
+        <ul>
+          <li>WordPress Websites</li>
+          <li>Wix &amp; Squarespace</li>
+          <li>Elementor Pro</li>
+          <li>Landing Pages</li>
+          <li>Redesigns &amp; Revamps</li>
+          <li>Mobile-responsive design</li>
+        </ul>
+      </div>
+      <div class="svc-card fm up d3">
+        <div class="svc-icon" style="background:rgba(168,85,247,.15);color:var(--b)">🎨</div>
+        <h3>Branding &amp; Social Media</h3>
+        <ul>
+          <li>Social Media Branding Guide</li>
+          <li>Facebook Business Page</li>
+          <li>Instagram Profile Branding</li>
+          <li>LinkedIn Profile &amp; Company Page</li>
+          <li>Banners &amp; Highlight Covers</li>
+        </ul>
+      </div>
+      <div class="svc-card fm up d4">
+        <div class="svc-icon" style="background:rgba(236,72,153,.15);color:var(--c)">⚙️</div>
+        <h3>Automation &amp; AI</h3>
+        <ul>
+          <li>n8n Workflow Automation</li>
+          <li>Make.com &amp; Zapier</li>
+          <li>Lead Capture &amp; Follow-up</li>
+          <li>AI Content Workflows</li>
+          <li>Tool &amp; Platform Integrations</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY ME -->
+<section class="why" id="why">
+  <div class="wrap why-split">
+    <div>
+      <div class="eyebrow fm left">WHY CLIENTS PICK ME</div>
+      <h2 class="fm left d1">Why clients choose to work with me</h2>
+      <ul class="checklist">
+        <li class="fm left d2"><span class="ck">✔</span>10+ years of experience with overseas clients</li>
+        <li class="fm left d3"><span class="ck">✔</span>One partner for website, branding, and automation</li>
+        <li class="fm left d4"><span class="ck">✔</span>Clear communication throughout the project</li>
+        <li class="fm left d5"><span class="ck">✔</span>Focus on business goals, not just design</li>
+      </ul>
+      <a href="#cta" class="btn btn-primary fm left d5" style="display:inline-block;margin-top:32px;">Let's talk about your project</a>
+    </div>
+    <div class="why-visual fm right">
+      <div class="big">10+</div>
+      <div class="label">Years of Experience</div>
+      <div class="sub">with international clients</div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats" style="padding:0">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat-item fm up">
+        <div class="stat-num" data-count="10">0</div>
+        <div class="stat-label">YEARS EXPERIENCE</div>
+      </div>
+      <div class="stat-item fm up d2">
+        <div class="stat-num" data-count="3">0</div>
+        <div class="stat-label">CORE SERVICE AREAS</div>
+      </div>
+      <div class="stat-item fm up d3">
+        <div class="stat-num" data-count="1">0</div>
+        <div class="stat-label">PARTNER FOR EVERYTHING</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="wrap" style="text-align:center">
+    <div class="eyebrow fm up">HOW IT WORKS</div>
+    <h2 class="section-title fm up d1">Simple, clear process</h2>
+    <div class="process-steps">
+      <div class="step fm scale d1">
+        <div class="step-num">01</div>
+        <h3>Free Call</h3>
+        <p>We talk about your goals. I give honest feedback — no pitch, no pressure.</p>
+      </div>
+      <div class="step fm scale d2">
+        <div class="step-num">02</div>
+        <h3>Strategy</h3>
+        <p>I map out what needs to be built across site, brand, and automation.</p>
+      </div>
+      <div class="step fm scale d3">
+        <div class="step-num">03</div>
+        <h3>Build</h3>
+        <p>I execute everything. You get regular updates and have full visibility.</p>
+      </div>
+      <div class="step fm scale d4">
+        <div class="step-num">04</div>
+        <h3>Launch</h3>
+        <p>Your new presence goes live — cohesive, professional, and ready to grow.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="wrap">
+    <div class="eyebrow fm up">WHAT CLIENTS SAY</div>
+    <h2 class="section-title fm up d1">Loved by the people who launch</h2>
+    <div class="test-grid">
+      <div class="test-card fm left d2">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Finally, someone who gets the full picture. My site, brand, and lead follow-up system all work together now. I don't think about any of it anymore — it just runs."</blockquote>
+        <div class="test-author">
+          <div class="avatar" style="background:linear-gradient(135deg,var(--a),var(--c))"></div>
+          <div><strong>Sarah M.</strong><span>Business Coach, USA</span></div>
         </div>
-        <div class="card fm-reveal">
-          <div class="ico" style="background:var(--b)">✨</div>
-          <h3>Edit it all in Elementor</h3>
-          <p>No code lock-in. Every section, color, and word is editable visually. The motion just works on whatever you type.</p>
-        </div>
-        <div class="card fm-reveal">
-          <div class="ico" style="background:var(--c)">⚡</div>
-          <h3>Fast &amp; accessible</h3>
-          <p>Lightweight vanilla JS, lazy reveals, and full prefers-reduced-motion support. Great Core Web Vitals out of the box.</p>
+      </div>
+      <div class="test-card fm right d3">
+        <div class="stars">★★★★★</div>
+        <blockquote>"He redesigned my site, sorted my Instagram branding, and set up an n8n flow for client onboarding. It saved me hours every week. Clear communication the whole way through."</blockquote>
+        <div class="test-author">
+          <div class="avatar" style="background:linear-gradient(135deg,var(--b),var(--a))"></div>
+          <div><strong>James R.</strong><span>Consultant, UK</span></div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- SHOWCASE -->
-  <section class="showcase">
-    <div class="wrap split">
-      <div>
-        <h2 class="fm-reveal from-left">Design once. Delight on every scroll.</h2>
-        <p class="fm-reveal from-left">Sections fade and slide into place as visitors scroll, images drift with gentle parallax, and numbers count up on cue. The result feels premium and intentional — the way a Framer site feels — without leaving WordPress.</p>
-        <a class="btn btn-dark fm-reveal from-left" href="#cta">Explore the motion system</a>
-      </div>
-      <div class="visual fm-reveal zoom-in" data-parallax>Your visuals here</div>
-    </div>
-  </section>
+<!-- CTA -->
+<section class="cta" id="cta">
+  <div class="cta-blob"></div>
+  <div class="cta-inner">
+    <div class="eyebrow fm up" style="color:rgba(255,255,255,.4)">GET STARTED</div>
+    <h2 class="fm up d1">Let's meet on a call.</h2>
+    <p class="fm up d2">Tell me about your business, your goals, and where you're currently stuck. I'll give you honest feedback on what needs improvement — before you commit to anything.</p>
+    <a href="#" class="btn btn-primary fm up d3" style="font-size:17px;padding:18px 44px;">Book a Free Call</a>
+    <p class="cta-note fm up d4">No pressure. No pitch. Just an honest conversation.</p>
+  </div>
+</section>
 
-  <!-- STATS -->
-  <section class="stats">
-    <div class="wrap grid3">
-      <div class="stat fm-reveal"><div class="num" data-count="240">0</div><div class="cap">PROJECTS SHIPPED</div></div>
-      <div class="stat fm-reveal"><div class="num" data-count="98" data-suffix="%">0</div><div class="cap">CLIENT SATISFACTION</div></div>
-      <div class="stat fm-reveal"><div class="num" data-count="1.2" data-decimals="1">0</div><div class="cap">AVG. SECONDS TO LOAD</div></div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section>
-    <div class="wrap">
-      <h2 class="section-h2 fm-reveal">Loved by the people who launch</h2>
-      <div class="split">
-        <blockquote class="fm-reveal from-left">
-          <p>“Our bounce rate dropped and demos went up. The site finally feels like our brand — alive, fast, and effortless to update.”</p>
-          <div class="author"><div class="avatar" style="background:linear-gradient(135deg,var(--a),var(--c))"></div><div><strong>Maya Chen</strong><br><small>Head of Growth, Lumen</small></div></div>
-        </blockquote>
-        <blockquote class="fm-reveal from-right">
-          <p>“They delivered a Framer-grade experience on WordPress. My team edits everything in Elementor and nothing ever breaks.”</p>
-          <div class="author"><div class="avatar" style="background:linear-gradient(135deg,var(--b),var(--a))"></div><div><strong>Daniel Ortega</strong><br><small>Founder, Apex Studio</small></div></div>
-        </blockquote>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta" id="cta">
-    <div class="inner wrap">
-      <h2 class="fm-reveal">Ready to make your site move?</h2>
-      <p class="fm-reveal">Let's turn your WordPress site into a motion-first experience your visitors remember.</p>
-      <a class="btn btn-primary fm-reveal" href="#">Book a free consult</a>
-    </div>
-  </section>
+<!-- FOOTER -->
+<footer>
+  <div class="logo">Your<span>Brand</span></div>
+  <p>Website · Branding · Automation — all in one place.</p>
+  <p style="font-size:12px;color:rgba(255,255,255,.2)">© 2025</p>
+</footer>
 
 <script>
-  // Mirrors framer-scroll.js so the preview behaves like the real site.
-  var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+(function(){
+  "use strict";
+  var reduce = matchMedia("(prefers-reduced-motion:reduce)").matches;
 
-  // Reveal
-  var io = new IntersectionObserver(function(es,o){
-    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("is-visible"); o.unobserve(e.target);} });
-  },{threshold:.15, rootMargin:"0px 0px -8% 0px"});
-  document.querySelectorAll(".fm-reveal").forEach(function(el){ reduce ? el.classList.add("is-visible") : io.observe(el); });
-
-  // Count-up
-  var ci = new IntersectionObserver(function(es,o){
+  /* ── Scroll reveal ── */
+  var io = new IntersectionObserver(function(es,ob){
     es.forEach(function(e){
-      if(!e.isIntersecting) return;
-      var el=e.target, target=parseFloat(el.dataset.count), dec=parseInt(el.dataset.decimals||0), suf=el.dataset.suffix||"", start=null;
-      if(reduce){ el.textContent=target+suf; o.unobserve(el); return; }
+      if(e.isIntersecting){e.target.classList.add("visible");ob.unobserve(e.target);}
+    });
+  },{threshold:.14,rootMargin:"0px 0px -6% 0px"});
+
+  document.querySelectorAll(".fm").forEach(function(el){
+    reduce ? el.classList.add("visible") : io.observe(el);
+  });
+
+  /* ── Count-up ── */
+  var ci = new IntersectionObserver(function(es,ob){
+    es.forEach(function(e){
+      if(!e.isIntersecting)return;
+      var el=e.target,target=parseFloat(el.dataset.count)||0,suf=el.dataset.suffix||"",start=null;
+      if(reduce){el.textContent=target+suf;ob.unobserve(el);return;}
       requestAnimationFrame(function step(ts){
         if(start===null)start=ts;
-        var p=Math.min((ts-start)/1600,1), eased=1-Math.pow(1-p,3);
-        el.textContent=(target*eased).toFixed(dec)+suf;
+        var p=Math.min((ts-start)/1500,1),eased=1-Math.pow(1-p,3);
+        el.textContent=Math.round(target*eased)+suf;
         if(p<1)requestAnimationFrame(step);
       });
-      o.unobserve(el);
+      ob.unobserve(el);
     });
-  },{threshold:.6});
-  document.querySelectorAll("[data-count]").forEach(function(el){ ci.observe(el); });
+  },{threshold:.7});
+  document.querySelectorAll("[data-count]").forEach(function(el){ci.observe(el);});
 
-  // Parallax
-  var px=document.querySelector("[data-parallax]");
-  if(px && !reduce){
-    addEventListener("scroll",function(){
-      var r=px.getBoundingClientRect(), prog=(r.top+r.height/2-innerHeight/2)/innerHeight;
-      px.style.transform="translate3d(0,"+(-prog*22).toFixed(1)+"px,0)";
-    },{passive:true});
-  }
+  /* ── Nav background on scroll ── */
+  var nav=document.querySelector("nav");
+  addEventListener("scroll",function(){
+    nav.style.background=scrollY>60
+      ?"rgba(11,11,18,0.92)"
+      :"rgba(11,11,18,0.6)";
+  },{passive:true});
+})();
 </script>
 </body>
 </html>

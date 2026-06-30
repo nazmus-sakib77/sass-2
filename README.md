@@ -29,9 +29,11 @@ server-side in each layout/action.
 
 1. Copy env and fill in values:
    ```bash
-   cp .env.example .env.local
+   cp .env.example .env
    # set DATABASE_URL, AUTH_SECRET (npx auth secret), SEED_ADMIN_*
    ```
+   > Use `.env` (not `.env.local`): the Prisma CLI (`migrate deploy`, `db seed`)
+   > only reads `.env`, while Next.js reads both. Both are gitignored.
 2. Run a MySQL 8 instance (e.g. Docker):
    ```bash
    docker run --name tomotik-db -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=tomotik -p 3306:3306 -d mysql:8

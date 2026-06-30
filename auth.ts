@@ -7,6 +7,9 @@ import { authConfig } from "@/auth.config";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   ...authConfig,
+  // Required for self-hosted / non-Vercel deploys (e.g. Hostinger) so Auth.js
+  // trusts the configured AUTH_URL host instead of throwing UntrustedHost.
+  trustHost: true,
   adapter: PrismaAdapter(db),
   providers: [
     Credentials({

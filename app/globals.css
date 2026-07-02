@@ -529,3 +529,147 @@ h1, h2, h3, h4 {
   .nav-links { display: none; }
   .section { padding: 64px 0; }
 }
+
+/* =====================================================================
+   Polish & motion enhancements
+   (micro-interactions, mobile menu, a11y focus, brand details)
+   ===================================================================== */
+
+::selection {
+  background: rgba(255, 122, 0, 0.35);
+  color: var(--text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--flame-2);
+  outline-offset: 2px;
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-strong) transparent;
+}
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 999px;
+  border: 2px solid var(--bg);
+}
+::-webkit-scrollbar-track { background: transparent; }
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--text-dim);
+}
+
+/* Button press feedback */
+.btn:active:not(:disabled) {
+  transform: translateY(0) scale(0.97);
+}
+
+/* Scroll-aware navbar (class toggled in components/Navbar.tsx) */
+.navbar {
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+.navbar.scrolled {
+  background: rgba(8, 8, 10, 0.9);
+  box-shadow: 0 12px 32px -20px rgba(0, 0, 0, 0.8);
+}
+.nav-links a.active {
+  color: var(--flame-3);
+}
+
+/* Hamburger (mobile only) */
+.nav-burger {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+.nav-burger span {
+  display: block;
+  width: 16px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--text);
+  transition: transform 0.25s ease;
+}
+.nav-burger[aria-expanded="true"] span:first-child {
+  transform: translateY(3.5px) rotate(45deg);
+}
+.nav-burger[aria-expanded="true"] span:last-child {
+  transform: translateY(-3.5px) rotate(-45deg);
+}
+
+/* Mobile dropdown menu */
+.mobile-menu {
+  position: fixed;
+  top: 68px;
+  left: 0;
+  right: 0;
+  z-index: 49;
+  background: rgba(10, 10, 13, 0.96);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 24px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.mobile-menu a {
+  padding: 12px 10px;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 1.02rem;
+}
+.mobile-menu a:hover,
+.mobile-menu a.active {
+  color: var(--text);
+  background: var(--bg-card);
+}
+.mobile-menu a.btn {
+  margin-top: 10px;
+  justify-content: center;
+  color: #1a0a00;
+}
+
+@media (max-width: 860px) {
+  .nav-burger { display: inline-flex; }
+  .nav-cta .btn-ghost { display: none; }
+}
+
+/* Smoother, glowier card hovers */
+.card,
+.work-card {
+  transition:
+    border-color 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+    background 0.3s ease;
+}
+.work-card:hover {
+  box-shadow: 0 24px 48px -26px var(--flame-glow);
+}
+
+/* Gentle ambient flame drift behind everything */
+@media (prefers-reduced-motion: no-preference) {
+  body::before {
+    animation: ambient-drift 14s ease-in-out infinite alternate;
+  }
+}
+@keyframes ambient-drift {
+  from { opacity: 0.65; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

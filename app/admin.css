@@ -125,7 +125,8 @@
 .table-wrap {
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  overflow: hidden;
+  overflow-x: auto; /* tables scroll sideways on small screens instead of clipping */
+  overflow-y: hidden;
   background: var(--bg-card);
 }
 table.data {

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Reveal from "@/components/Reveal";
+import Reveal, { Stagger, StaggerItem } from "@/components/Reveal";
 import { getPublishedCaseStudies } from "@/lib/queries";
 
 export const dynamic = "force-dynamic";
@@ -32,10 +32,10 @@ export default async function WorkPage() {
               Case studies are on their way. <Link href="/get-quote" className="flame-text">Start your own project</Link>.
             </div>
           ) : (
-            <div className="grid grid-3">
-              {items.map((cs, i) => (
-                <Reveal key={cs.id} delay={i * 0.05}>
-                  <Link href={`/work/${cs.slug}`} className="work-card" style={{ height: "100%" }}>
+            <Stagger className="grid grid-3">
+              {items.map((cs) => (
+                <StaggerItem key={cs.id} style={{ display: "flex" }}>
+                  <Link href={`/work/${cs.slug}`} className="work-card" style={{ width: "100%" }}>
                     <div className="work-card-cover" style={cs.coverImage ? { backgroundImage: `url(${cs.coverImage})` } : undefined} />
                     <div className="work-card-body">
                       <div className="work-card-meta">
@@ -47,9 +47,9 @@ export default async function WorkPage() {
                       {cs.result && <div className="work-card-result">{cs.result}</div>}
                     </div>
                   </Link>
-                </Reveal>
+                </StaggerItem>
               ))}
-            </div>
+            </Stagger>
           )}
         </div>
       </section>

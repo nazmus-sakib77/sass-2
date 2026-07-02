@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Reveal from "@/components/Reveal";
+import Reveal, { Stagger, StaggerItem } from "@/components/Reveal";
 import { site } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -26,9 +26,9 @@ export default function ServicesPage() {
 
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
-          <div className="grid grid-3">
-            {site.services.map((svc, i) => (
-              <Reveal key={svc.title} delay={i * 0.06}>
+          <Stagger className="grid grid-3">
+            {site.services.map((svc) => (
+              <StaggerItem key={svc.title}>
                 <div className="card" style={{ height: "100%" }}>
                   <div style={{ fontSize: "1.8rem", marginBottom: 14 }} className="flame-text">
                     {svc.icon}
@@ -43,9 +43,9 @@ export default function ServicesPage() {
                     ))}
                   </ul>
                 </div>
-              </Reveal>
+              </StaggerItem>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 
@@ -57,10 +57,10 @@ export default function ServicesPage() {
               <h2 className="section-title">A tight, transparent build loop</h2>
             </div>
           </div>
-          <div className="grid grid-2">
-            {site.process.map((step, i) => (
-              <Reveal key={step.step} delay={i * 0.05}>
-                <div className="card" style={{ display: "flex", gap: 18 }}>
+          <Stagger className="grid grid-2">
+            {site.process.map((step) => (
+              <StaggerItem key={step.step}>
+                <div className="card" style={{ display: "flex", gap: 18, height: "100%" }}>
                   <span className="mono flame-text" style={{ fontSize: "1.4rem", fontWeight: 700 }}>
                     {step.step}
                   </span>
@@ -69,9 +69,9 @@ export default function ServicesPage() {
                     <p style={{ color: "var(--text-muted)" }}>{step.body}</p>
                   </div>
                 </div>
-              </Reveal>
+              </StaggerItem>
             ))}
-          </div>
+          </Stagger>
           <div style={{ marginTop: 40 }}>
             <Link href="/get-quote" className="btn btn-primary">Start a project</Link>
           </div>

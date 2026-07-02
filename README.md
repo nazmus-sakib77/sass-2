@@ -64,6 +64,18 @@ server-side in each layout/action.
 Use `prisma migrate deploy` (not `migrate dev`) in production, and back up the
 database before each migration.
 
+## Customizing the design & animations
+
+- **All animation tuning lives in one file: `components/Reveal.tsx`.** Change the
+  `SPRING` constant (stiffness/damping) or `staggerChildren` to retune the whole
+  site's feel. `<Reveal>` animates a single block; `<Stagger>`/`<StaggerItem>`
+  animate grids one card at a time.
+- Brand colors, fonts, spacing: CSS variables at the top of `app/globals.css`.
+- Marketing copy (nav, services, pricing, FAQs): `content/site.json`.
+- Page transitions: `app/(site)/template.tsx`. Mobile menu + navbar: `components/Navbar.tsx`.
+- Animations automatically respect the visitor's OS "reduce motion" setting
+  (`components/MotionProvider.tsx`).
+
 ## Security
 
 - Passwords bcrypt-hashed (cost 12); never stored in plaintext.

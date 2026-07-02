@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, Inter, JetBrains_Mono } from "next/font/google";
 import { site, SITE_URL } from "@/lib/content";
+import MotionProvider from "@/components/MotionProvider";
 import "./globals.css";
 
 const bricolage = Bricolage_Grotesque({
@@ -52,7 +53,7 @@ export default function RootLayout({
       <body
         className={`${bricolage.variable} ${inter.variable} ${jetbrains.variable}`}
       >
-        {children}
+        <MotionProvider>{children}</MotionProvider>
       </body>
     </html>
   );

@@ -1,7 +1,9 @@
 "use client";
 
 import { useFormState, useFormStatus } from "react-dom";
+import { motion } from "motion/react";
 import { createLead, type LeadFormState } from "@/lib/actions/leads";
+import { SPRING } from "@/components/Reveal";
 
 const initialState: LeadFormState = { ok: false };
 
@@ -23,9 +25,15 @@ export default function LeadForm({
 
   if (state.ok) {
     return (
-      <div className="alert alert-success" role="status">
-        {state.message}
-      </div>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95, y: 10 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={SPRING}
+      >
+        <div className="alert alert-success" role="status">
+          ✓ {state.message}
+        </div>
+      </motion.div>
     );
   }
 

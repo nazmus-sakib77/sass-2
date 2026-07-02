@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Reveal from "@/components/Reveal";
+import Reveal, { Stagger, StaggerItem } from "@/components/Reveal";
 import { getPublishedPosts } from "@/lib/queries";
 
 export const dynamic = "force-dynamic";
@@ -37,10 +37,10 @@ export default async function BlogPage() {
               No posts published yet. Check back soon.
             </div>
           ) : (
-            <div className="grid grid-3">
-              {posts.map((p, i) => (
-                <Reveal key={p.id} delay={i * 0.05}>
-                  <Link href={`/blog/${p.slug}`} className="work-card" style={{ height: "100%" }}>
+            <Stagger className="grid grid-3">
+              {posts.map((p) => (
+                <StaggerItem key={p.id} style={{ display: "flex" }}>
+                  <Link href={`/blog/${p.slug}`} className="work-card" style={{ width: "100%" }}>
                     <div
                       className="work-card-cover"
                       style={p.coverImage ? { backgroundImage: `url(${p.coverImage})` } : undefined}
@@ -51,9 +51,9 @@ export default async function BlogPage() {
                       <p style={{ color: "var(--text-muted)", fontSize: "0.95rem" }}>{p.excerpt}</p>
                     </div>
                   </Link>
-                </Reveal>
+                </StaggerItem>
               ))}
-            </div>
+            </Stagger>
           )}
         </div>
       </section>

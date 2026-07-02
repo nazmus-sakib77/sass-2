@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Reveal from "@/components/Reveal";
+import Reveal, { Stagger, StaggerItem } from "@/components/Reveal";
 import { site } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -25,9 +25,9 @@ export default function PricingPage() {
 
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
-          <div className="grid grid-3">
-            {site.pricing.map((tier, i) => (
-              <Reveal key={tier.name} delay={i * 0.06}>
+          <Stagger className="grid grid-3">
+            {site.pricing.map((tier) => (
+              <StaggerItem key={tier.name}>
                 <div
                   className="card"
                   style={{
@@ -66,9 +66,9 @@ export default function PricingPage() {
                     Get started
                   </Link>
                 </div>
-              </Reveal>
+              </StaggerItem>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 
@@ -80,16 +80,16 @@ export default function PricingPage() {
               <h2 className="section-title">Common questions</h2>
             </div>
           </div>
-          <div className="grid grid-2">
-            {site.faqs.map((faq, i) => (
-              <Reveal key={faq.q} delay={i * 0.05}>
-                <div className="card">
+          <Stagger className="grid grid-2">
+            {site.faqs.map((faq) => (
+              <StaggerItem key={faq.q}>
+                <div className="card" style={{ height: "100%" }}>
                   <h3 style={{ fontSize: "1.1rem", marginBottom: 8 }}>{faq.q}</h3>
                   <p style={{ color: "var(--text-muted)" }}>{faq.a}</p>
                 </div>
-              </Reveal>
+              </StaggerItem>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
     </>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Reveal from "@/components/Reveal";
+import Reveal, { Stagger, StaggerItem } from "@/components/Reveal";
 import { site } from "@/lib/content";
 import { getPublishedCaseStudies } from "@/lib/queries";
 
@@ -39,16 +39,16 @@ export default async function HomePage() {
 
       {/* Stats */}
       <section className="container" style={{ paddingBottom: 24 }}>
-        <div className="grid grid-3">
-          {site.stats.map((s, i) => (
-            <Reveal key={s.label} delay={i * 0.05}>
+        <Stagger className="grid grid-3">
+          {site.stats.map((s) => (
+            <StaggerItem key={s.label}>
               <div className="stat">
                 <span className="stat-num flame-text">{s.num}</span>
                 <span className="stat-label">{s.label}</span>
               </div>
-            </Reveal>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
       </section>
 
       {/* Services */}
@@ -63,9 +63,9 @@ export default async function HomePage() {
               All services
             </Link>
           </div>
-          <div className="grid grid-3">
-            {site.services.map((svc, i) => (
-              <Reveal key={svc.title} delay={i * 0.06}>
+          <Stagger className="grid grid-3">
+            {site.services.map((svc) => (
+              <StaggerItem key={svc.title}>
                 <div className="card" style={{ height: "100%" }}>
                   <div style={{ fontSize: "1.8rem", marginBottom: 14 }} className="flame-text">
                     {svc.icon}
@@ -81,9 +81,9 @@ export default async function HomePage() {
                     ))}
                   </ul>
                 </div>
-              </Reveal>
+              </StaggerItem>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 
@@ -106,10 +106,10 @@ export default async function HomePage() {
               <Link href="/get-quote" className="flame-text">start your own project</Link>.
             </div>
           ) : (
-            <div className="grid grid-3">
-              {caseStudies.map((cs, i) => (
-                <Reveal key={cs.id} delay={i * 0.06}>
-                  <Link href={`/work/${cs.slug}`} className="work-card" style={{ height: "100%" }}>
+            <Stagger className="grid grid-3">
+              {caseStudies.map((cs) => (
+                <StaggerItem key={cs.id} style={{ display: "flex" }}>
+                  <Link href={`/work/${cs.slug}`} className="work-card" style={{ width: "100%" }}>
                     <div
                       className="work-card-cover"
                       style={cs.coverImage ? { backgroundImage: `url(${cs.coverImage})` } : undefined}
@@ -124,9 +124,9 @@ export default async function HomePage() {
                       {cs.result && <div className="work-card-result">{cs.result}</div>}
                     </div>
                   </Link>
-                </Reveal>
+                </StaggerItem>
               ))}
-            </div>
+            </Stagger>
           )}
         </div>
       </section>
@@ -140,10 +140,10 @@ export default async function HomePage() {
               <h2 className="section-title">From spark to launch</h2>
             </div>
           </div>
-          <div className="grid grid-2">
-            {site.process.map((step, i) => (
-              <Reveal key={step.step} delay={i * 0.05}>
-                <div className="card" style={{ display: "flex", gap: 18 }}>
+          <Stagger className="grid grid-2">
+            {site.process.map((step) => (
+              <StaggerItem key={step.step}>
+                <div className="card" style={{ display: "flex", gap: 18, height: "100%" }}>
                   <span className="mono flame-text" style={{ fontSize: "1.4rem", fontWeight: 700 }}>
                     {step.step}
                   </span>
@@ -152,9 +152,9 @@ export default async function HomePage() {
                     <p style={{ color: "var(--text-muted)" }}>{step.body}</p>
                   </div>
                 </div>
-              </Reveal>
+              </StaggerItem>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 

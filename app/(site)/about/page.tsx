@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Reveal from "@/components/Reveal";
+import Reveal, { Stagger, StaggerItem } from "@/components/Reveal";
 import { site } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -26,23 +26,23 @@ export default function AboutPage() {
 
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
-          <div className="grid grid-3">
-            {site.stats.map((s, i) => (
-              <Reveal key={s.label} delay={i * 0.05}>
-                <div className="card stat">
+          <Stagger className="grid grid-3">
+            {site.stats.map((s) => (
+              <StaggerItem key={s.label}>
+                <div className="card stat" style={{ height: "100%" }}>
                   <span className="stat-num flame-text">{s.num}</span>
                   <span className="stat-label">{s.label}</span>
                 </div>
-              </Reveal>
+              </StaggerItem>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
-          <div className="grid grid-2">
-            <Reveal>
+          <Stagger className="grid grid-2">
+            <StaggerItem>
               <div className="card" style={{ height: "100%" }}>
                 <h3 style={{ fontSize: "1.3rem", marginBottom: 10 }}>How we think</h3>
                 <p style={{ color: "var(--text-muted)" }}>
@@ -50,8 +50,8 @@ export default function AboutPage() {
                   project is fast to extend and a pleasure to maintain. No mystery code, no surprises.
                 </p>
               </div>
-            </Reveal>
-            <Reveal delay={0.06}>
+            </StaggerItem>
+            <StaggerItem>
               <div className="card" style={{ height: "100%" }}>
                 <h3 style={{ fontSize: "1.3rem", marginBottom: 10 }}>How we work</h3>
                 <p style={{ color: "var(--text-muted)" }}>
@@ -59,8 +59,8 @@ export default function AboutPage() {
                   what we&apos;re building, why, and what&apos;s next.
                 </p>
               </div>
-            </Reveal>
-          </div>
+            </StaggerItem>
+          </Stagger>
           <div style={{ marginTop: 40 }}>
             <Link href="/contact" className="btn btn-primary">Work with us</Link>
           </div>

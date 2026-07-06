@@ -7,7 +7,8 @@ export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Work",
-  description: "Selected case studies — full-stack platforms, marketing sites, and products built by Tomotik.",
+  description:
+    "Selected case studies from Tomotik — what we built, for whom, and what it changed.",
 };
 
 export default async function WorkPage() {
@@ -19,8 +20,11 @@ export default async function WorkPage() {
         <div className="container">
           <Reveal>
             <p className="eyebrow">Work</p>
-            <h1>Products we&apos;ve set on fire.</h1>
-            <p className="section-lead">A selection of platforms, sites, and systems we&apos;ve designed and shipped.</p>
+            <h1>Selected work.</h1>
+            <p className="section-lead">
+              Projects we&apos;re proud of — each case study covers what we built,
+              for whom, and what it changed.
+            </p>
           </Reveal>
         </div>
       </section>
@@ -29,7 +33,8 @@ export default async function WorkPage() {
         <div className="container">
           {items.length === 0 ? (
             <div className="card" style={{ textAlign: "center", color: "var(--text-muted)" }}>
-              Case studies are on their way. <Link href="/get-quote" className="flame-text">Start your own project</Link>.
+              We&apos;re writing up our first case studies now. Want to see work relevant
+              to your project? <Link href="/get-quote" className="flame-text">Ask us on a call</Link>.
             </div>
           ) : (
             <Stagger className="grid grid-3">

@@ -14,20 +14,24 @@ export default async function HomePage() {
       <section className="hero">
         <div className="container">
           <Reveal>
-            <p className="eyebrow">Product studio · Next.js full-stack</p>
+            <p className="eyebrow">Independent design &amp; development studio</p>
           </Reveal>
           <Reveal delay={0.05}>
             <h1>
-              We build software that <span className="flame-text">catches fire.</span>
+              Websites that <span className="flame-text">win you customers.</span>
             </h1>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="hero-lead">{site.description}</p>
+            <p className="hero-lead">
+              Tomotik is a small studio that designs and builds fast, modern websites
+              and web apps for small businesses. Fixed quotes, honest timelines, and
+              one team from first call to launch.
+            </p>
           </Reveal>
           <Reveal delay={0.15}>
             <div className="hero-cta">
               <Link href="/get-quote" className="btn btn-primary">
-                Start a project
+                Get a free quote
               </Link>
               <Link href="/work" className="btn btn-ghost">
                 See our work
@@ -57,7 +61,7 @@ export default async function HomePage() {
           <div className="grid-head">
             <div>
               <p className="eyebrow">What we do</p>
-              <h2 className="section-title">Services built to ship</h2>
+              <h2 className="section-title">Three ways we can help</h2>
             </div>
             <Link href="/services" className="btn btn-ghost btn-sm">
               All services
@@ -102,8 +106,8 @@ export default async function HomePage() {
 
           {caseStudies.length === 0 ? (
             <div className="card" style={{ textAlign: "center", color: "var(--text-muted)" }}>
-              Case studies are on their way. Check back soon — or{" "}
-              <Link href="/get-quote" className="flame-text">start your own project</Link>.
+              We&apos;re writing up our first case studies now. Want to see work relevant
+              to your project? <Link href="/get-quote" className="flame-text">Ask us on a call</Link>.
             </div>
           ) : (
             <Stagger className="grid grid-3">
@@ -137,7 +141,7 @@ export default async function HomePage() {
           <div className="grid-head">
             <div>
               <p className="eyebrow">How we work</p>
-              <h2 className="section-title">From spark to launch</h2>
+              <h2 className="section-title">From first call to launch</h2>
             </div>
           </div>
           <Stagger className="grid grid-2">
@@ -175,11 +179,12 @@ export default async function HomePage() {
                 Got something to build?
               </h2>
               <p className="section-lead" style={{ margin: "0 auto 28px" }}>
-                Tell us about your project and we&apos;ll get back within one business day.
+                Tell us what you need. We reply within one business day, offer a free
+                30-minute call, and send a fixed quote within two — no pressure, no jargon.
               </p>
               <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
-                <Link href="/get-quote" className="btn btn-primary">Get a quote</Link>
-                <Link href="/contact" className="btn btn-ghost">Talk to us</Link>
+                <Link href="/get-quote" className="btn btn-primary">Get a free quote</Link>
+                <Link href="/contact" className="btn btn-ghost">Ask a question</Link>
               </div>
             </div>
           </Reveal>

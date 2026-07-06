@@ -36,7 +36,7 @@ export default function Footer() {
             </h4>
             <ul className="footer-links">
               <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
-              <li><Link href="/get-quote">Start a project</Link></li>
+              <li><Link href="/get-quote">Get a free quote</Link></li>
               <li><Link href="/login">Client portal</Link></li>
               <li><a href={site.social.linkedin} target="_blank" rel="noreferrer">LinkedIn</a></li>
             </ul>

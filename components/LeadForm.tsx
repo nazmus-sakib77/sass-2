@@ -63,21 +63,21 @@ export default function LeadForm({
               <label htmlFor="service">Service</label>
               <select id="service" name="service" defaultValue="">
                 <option value="" disabled>Select a service</option>
-                <option>Web Platform</option>
-                <option>Product Design</option>
-                <option>Growth Engineering</option>
-                <option>Full-stack build</option>
-                <option>Something else</option>
+                <option>Website or landing page</option>
+                <option>Web app or client portal</option>
+                <option>Care for an existing site</option>
+                <option>Something else / not sure</option>
               </select>
             </div>
             <div className="field">
               <label htmlFor="budget">Budget</label>
               <select id="budget" name="budget" defaultValue="">
                 <option value="" disabled>Select a range</option>
-                <option>&lt; $2,500</option>
-                <option>$2,500 – $7,500</option>
-                <option>$7,500 – $20,000</option>
-                <option>$20,000+</option>
+                <option>Under $2,000</option>
+                <option>$2,000 – $6,500</option>
+                <option>$6,500 – $15,000</option>
+                <option>$15,000+</option>
+                <option>Not sure yet</option>
               </select>
             </div>
           </div>

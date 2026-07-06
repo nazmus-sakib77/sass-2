@@ -6,7 +6,7 @@ import { site } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Web platforms, product design, and growth engineering — full-stack builds from Tomotik.",
+    "Websites, web apps, and ongoing care — honestly scoped, fixed-quote work from Tomotik.",
 };
 
 export default function ServicesPage() {
@@ -16,9 +16,10 @@ export default function ServicesPage() {
         <div className="container">
           <Reveal>
             <p className="eyebrow">Services</p>
-            <h1>Everything you need to ship a modern product.</h1>
+            <h1>What we do — scoped honestly.</h1>
             <p className="section-lead">
-              We design, build, and grow full-stack web products — and we own the outcome end to end.
+              Three ways we work. Every engagement starts with a fixed written quote,
+              includes revision rounds, and ends with everything in your name.
             </p>
           </Reveal>
         </div>
@@ -54,7 +55,7 @@ export default function ServicesPage() {
           <div className="grid-head">
             <div>
               <p className="eyebrow">Process</p>
-              <h2 className="section-title">A tight, transparent build loop</h2>
+              <h2 className="section-title">From first call to launch</h2>
             </div>
           </div>
           <Stagger className="grid grid-2">
@@ -73,7 +74,7 @@ export default function ServicesPage() {
             ))}
           </Stagger>
           <div style={{ marginTop: 40 }}>
-            <Link href="/get-quote" className="btn btn-primary">Start a project</Link>
+            <Link href="/get-quote" className="btn btn-primary">Get a free quote</Link>
           </div>
         </div>
       </section>

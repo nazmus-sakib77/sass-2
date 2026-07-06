@@ -17,7 +17,8 @@ export default function ContactPage() {
             <p className="eyebrow">Contact</p>
             <h1>Say hello.</h1>
             <p className="section-lead" style={{ marginBottom: 28 }}>
-              Questions, collaborations, or just want to talk shop? Drop us a line.
+              A question, an idea, or a second opinion on something web-related —
+              we answer every message within one business day.
             </p>
             <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 16 }}>
               <li>
@@ -26,10 +27,12 @@ export default function ContactPage() {
                   {site.email}
                 </a>
               </li>
-              <li>
-                <div className="stat-label">Phone</div>
-                <span style={{ fontSize: "1.05rem" }}>{site.phone}</span>
-              </li>
+              {site.phone && (
+                <li>
+                  <div className="stat-label">Phone / WhatsApp</div>
+                  <span style={{ fontSize: "1.05rem" }}>{site.phone}</span>
+                </li>
+              )}
               <li>
                 <div className="stat-label">Location</div>
                 <span style={{ fontSize: "1.05rem" }}>{site.location}</span>

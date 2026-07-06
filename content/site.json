@@ -1,9 +1,9 @@
 {
   "name": "Tomotik",
-  "tagline": "We build software that catches fire.",
-  "description": "Tomotik is a product studio designing and shipping fast, modern web platforms — from marketing sites to full-stack systems.",
+  "tagline": "Websites & web apps that win you customers.",
+  "description": "Tomotik is an independent web design & development studio. We build fast, modern websites and web apps for small businesses — fixed quotes, honest timelines, and everything delivered in your name.",
   "email": "hello@tomotik.com",
-  "phone": "+880 1700 000000",
+  "phone": "",
   "location": "Dhaka, Bangladesh — working worldwide",
   "social": {
     "twitter": "https://twitter.com/tomotik",
@@ -20,65 +20,121 @@
   ],
   "services": [
     {
-      "title": "Web Platforms",
+      "title": "Websites & landing pages",
       "icon": "▲",
-      "summary": "Production-grade Next.js apps — marketing sites, dashboards, and full-stack systems built to scale.",
-      "points": ["Next.js + TypeScript", "Design systems", "CMS & dashboards"]
+      "summary": "Marketing sites that load fast, read clearly, and make it easy to contact you. Designed and built by the same hands — no handoffs, no telephone game.",
+      "points": ["Design + build, one team", "Copy polish & on-page SEO basics", "Lead forms wired to your inbox"]
     },
     {
-      "title": "Product Design",
+      "title": "Web apps & portals",
       "icon": "◆",
-      "summary": "Interfaces that feel inevitable. We design the flow, the system, and the details that make it sing.",
-      "points": ["UX & UI design", "Prototyping", "Brand systems"]
+      "summary": "Dashboards, admin panels, and client portals on a modern stack — the internal tools and logged-in experiences your business actually runs on.",
+      "points": ["User accounts & roles", "Admin dashboards & CMS", "Databases & integrations"]
     },
     {
-      "title": "Growth Engineering",
+      "title": "Care & improvements",
       "icon": "✦",
-      "summary": "SEO, analytics, and conversion-focused builds that turn visitors into a measurable pipeline.",
-      "points": ["Technical SEO", "Lead capture", "Analytics"]
+      "summary": "Already live? We keep sites healthy and improving month to month — fixes, updates, speed work, and a steady stream of small wins.",
+      "points": ["Monthly care plan", "Priority fixes & updates", "Speed & SEO improvements"]
     }
   ],
   "process": [
-    { "step": "01", "title": "Discovery", "body": "We map the problem, the audience, and the metric that matters." },
-    { "step": "02", "title": "Design", "body": "Systems-first design — fast to iterate, ready to build." },
-    { "step": "03", "title": "Build", "body": "Clean, typed, tested code shipped in tight increments." },
-    { "step": "04", "title": "Launch", "body": "Deploy, measure, and keep the flame going post-launch." }
+    {
+      "step": "01",
+      "title": "Scope",
+      "body": "A free 30-minute call about your goals, budget, and timeline. You get a fixed written quote within two business days — no obligation."
+    },
+    {
+      "step": "02",
+      "title": "Design",
+      "body": "We design the key screens first and revise together until they feel right. Two revision rounds are built into every quote."
+    },
+    {
+      "step": "03",
+      "title": "Build",
+      "body": "Clean, typed code with a live preview link from the first week — you watch progress instead of waiting on it."
+    },
+    {
+      "step": "04",
+      "title": "Launch",
+      "body": "We deploy, hand over every password and file, and walk you through your admin. Bugs are on us for 30 days after launch."
+    }
   ],
   "stats": [
-    { "num": "40+", "label": "Products shipped" },
-    { "num": "98%", "label": "Client retention" },
-    { "num": "4.9/5", "label": "Average rating" }
+    { "num": "<24h", "label": "Reply to every enquiry" },
+    { "num": "2–6 wks", "label": "Typical project, start to launch" },
+    { "num": "100%", "label": "Yours — code, domain & content" }
   ],
   "pricing": [
     {
       "name": "Launch",
-      "price": "$2,500",
+      "price": "from $1,900",
       "cadence": "one-off",
-      "summary": "A sharp marketing site to put your brand on the map.",
-      "features": ["Up to 6 pages", "Custom design system", "CMS-ready content", "Basic SEO", "2 weeks delivery"],
+      "summary": "A focused marketing site for a business that needs to look right and start converting.",
+      "features": [
+        "Up to 6 pages, designed & built",
+        "Mobile-first and fast-loading",
+        "Copy polish + on-page SEO basics",
+        "Contact & quote forms to your inbox",
+        "Two revision rounds included",
+        "Live in 2–3 weeks"
+      ],
       "featured": false
     },
     {
-      "name": "Scale",
-      "price": "$7,500",
+      "name": "Build",
+      "price": "from $6,500",
       "cadence": "one-off",
-      "summary": "Full-stack product with auth, database, and a custom dashboard.",
-      "features": ["Everything in Launch", "Auth + user roles", "Database + admin CMS", "Lead / CRM dashboard", "Client portal", "6 weeks delivery"],
+      "summary": "A full web application: accounts, dashboards, and the tools your business runs on.",
+      "features": [
+        "Everything in Launch",
+        "User accounts & role-based access",
+        "Admin dashboard & content management",
+        "Database, integrations & client portal",
+        "30 days of post-launch fixes included",
+        "Live in 4–8 weeks"
+      ],
       "featured": true
     },
     {
       "name": "Partner",
-      "price": "$3,000",
+      "price": "from $1,500",
       "cadence": "/month",
-      "summary": "Ongoing design + engineering as your embedded product team.",
-      "features": ["Dedicated capacity", "Roadmap & strategy", "Continuous delivery", "Priority support", "Monthly reporting"],
+      "summary": "Ongoing design + development for a site or product that needs to keep moving.",
+      "features": [
+        "Up to 25 hours every month",
+        "Priority turnaround on requests",
+        "Fixes, features & improvements",
+        "Monthly summary of what shipped",
+        "Pause or cancel anytime"
+      ],
       "featured": false
     }
   ],
   "faqs": [
-    { "q": "How fast can you start?", "a": "Usually within a week. We scope tightly so we can move fast without surprises." },
-    { "q": "Do you work with existing teams?", "a": "Yes — we embed alongside in-house teams or run the whole build end to end." },
-    { "q": "What's your stack?", "a": "Next.js, TypeScript, Prisma, and modern hosting. We pick boring, reliable tools that scale." },
-    { "q": "Do you offer ongoing support?", "a": "Our Partner plan covers continuous delivery, support, and iteration after launch." }
+    {
+      "q": "How much does a website cost?",
+      "a": "Most marketing sites we build land between $1,900 and $5,000 depending on pages and features; web apps start around $6,500. Every project gets a fixed written quote before we start — the price you approve is the price you pay."
+    },
+    {
+      "q": "How long does it take?",
+      "a": "A marketing site typically takes 2–3 weeks, a web app 4–8. The timeline is agreed in your quote, and you get a live preview link from the first week so you can see progress for yourself."
+    },
+    {
+      "q": "What do you need from me?",
+      "a": "Roughly two hours in total: a kickoff call, your logo and any content you already have, and feedback at the design and pre-launch checkpoints. Missing copy or images? We'll draft and source them with you."
+    },
+    {
+      "q": "Do I own everything?",
+      "a": "Yes. The domain, hosting, code, and content all live in accounts registered in your name. When the final invoice is paid you hold every password and file — nothing about your site depends on us."
+    },
+    {
+      "q": "How does payment work?",
+      "a": "50% to book your start date, 50% at launch. Monthly plans are simple monthly billing you can pause or cancel anytime. If scope changes mid-project, we quote the change in writing before doing the work."
+    },
+    {
+      "q": "What happens after launch?",
+      "a": "Every project includes 30 days of free bug fixes. After that, you can run things yourself — we hand over docs and a walkthrough — or move to a Partner plan and we keep improving it for you."
+    }
   ]
 }

@@ -5,7 +5,8 @@ import { site } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Pricing",
-  description: "Transparent project and retainer pricing from Tomotik.",
+  description:
+    "Honest 'from' pricing for websites, web apps, and monthly care — fixed written quotes before any work starts.",
 };
 
 export default function PricingPage() {
@@ -17,7 +18,9 @@ export default function PricingPage() {
             <p className="eyebrow">Pricing</p>
             <h1>Clear pricing. No surprises.</h1>
             <p className="section-lead">
-              Fixed-scope projects or an ongoing partnership — pick the model that fits where you are.
+              &ldquo;From&rdquo; prices below are honest starting points, not bait — your
+              exact price is fixed in a written quote before any work starts, and scope
+              changes are always quoted before we do them.
             </p>
           </Reveal>
         </div>
@@ -77,7 +80,7 @@ export default function PricingPage() {
           <div className="grid-head">
             <div>
               <p className="eyebrow">FAQ</p>
-              <h2 className="section-title">Common questions</h2>
+              <h2 className="section-title">Questions clients actually ask</h2>
             </div>
           </div>
           <Stagger className="grid grid-2">

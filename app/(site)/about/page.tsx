@@ -5,7 +5,7 @@ import { site } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "About",
-  description: `About ${site.name} — a product studio building fast, modern full-stack web platforms.`,
+  description: `${site.name} is an independent, founder-led web studio in Dhaka working with clients worldwide — small on purpose, direct by design.`,
 };
 
 export default function AboutPage() {
@@ -15,10 +15,12 @@ export default function AboutPage() {
         <div className="container">
           <Reveal>
             <p className="eyebrow">About</p>
-            <h1>A small studio with a serious obsession for shipping.</h1>
+            <h1>A small studio, on purpose.</h1>
             <p className="section-lead">
-              {site.name} is a product studio. We pair sharp design with full-stack engineering to
-              turn ideas into live products — fast, reliable, and built to grow.
+              {site.name} is an independent, founder-led studio based in Dhaka and
+              working with clients worldwide. We stay small so the person you talk
+              to on the first call is the same person designing and building your
+              site — no account managers, no handoffs, no telephone game.
             </p>
           </Reveal>
         </div>
@@ -44,25 +46,27 @@ export default function AboutPage() {
           <Stagger className="grid grid-2">
             <StaggerItem>
               <div className="card" style={{ height: "100%" }}>
-                <h3 style={{ fontSize: "1.3rem", marginBottom: 10 }}>How we think</h3>
+                <h3 style={{ fontSize: "1.3rem", marginBottom: 10 }}>How we work</h3>
                 <p style={{ color: "var(--text-muted)" }}>
-                  Systems over one-offs. We build design systems and typed codebases so every
-                  project is fast to extend and a pleasure to maintain. No mystery code, no surprises.
+                  Every project gets a fixed written quote before it starts, a live
+                  preview link from the first week, and two revision rounds built in.
+                  You always know what&apos;s being built, what it costs, and when it lands.
                 </p>
               </div>
             </StaggerItem>
             <StaggerItem>
               <div className="card" style={{ height: "100%" }}>
-                <h3 style={{ fontSize: "1.3rem", marginBottom: 10 }}>How we work</h3>
+                <h3 style={{ fontSize: "1.3rem", marginBottom: 10 }}>What you keep</h3>
                 <p style={{ color: "var(--text-muted)" }}>
-                  Tight increments, frequent demos, and a single point of contact. You always know
-                  what we&apos;re building, why, and what&apos;s next.
+                  Everything. Your domain, hosting, code, and content live in accounts
+                  registered in your name. When the final invoice is paid you hold every
+                  password and file — nothing about your site depends on us.
                 </p>
               </div>
             </StaggerItem>
           </Stagger>
           <div style={{ marginTop: 40 }}>
-            <Link href="/contact" className="btn btn-primary">Work with us</Link>
+            <Link href="/get-quote" className="btn btn-primary">Get a free quote</Link>
           </div>
         </div>
       </section>
